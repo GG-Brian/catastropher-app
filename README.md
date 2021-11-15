@@ -115,3 +115,4 @@ You will also need to download and install the database manager, connector and l
 
 
 - 3.6. The PUT (update record) operation works the very same way than the POST operation, but since it always implies specification of the identity of the affected record, the endpoint must end with the identity of the old record (this requirement should also be specified on the endpoint's code to work). The DELETE operation only needs this specification though, no other data specification should be needed!
++
