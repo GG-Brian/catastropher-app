@@ -1,0 +1,5 @@
+package com.itc.catastropher.data.dao;
+
+public interface IHelpsDao {
+
+}

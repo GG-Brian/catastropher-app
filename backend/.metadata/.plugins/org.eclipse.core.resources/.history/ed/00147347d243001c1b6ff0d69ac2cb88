@@ -1,0 +1,29 @@
+package com.itc.catastropher.data.model;
+
+import java.io.Serializable;
+
+import javax.persistence.Column;
+import javax.persistence.Embeddable;
+
+@Embeddable
+public class HelpsPrimaryKeys implements Serializable {
+	private static final long serialVersionUID = 1L;
+	
+	@Column(name = "adisaster") int adisaster;
+	@Column(name = "agroup") int agroup;
+	
+	
+	public HelpsPrimaryKeys() {}
+	public HelpsPrimaryKeys(int adisaster, int agroup) {
+		super();
+		this.adisaster = adisaster;
+		this.agroup = agroup;
+	}
+	
+	
+	public int getAdisaster() { return adisaster; }
+	public void setAdisaster(int adisaster) { this.adisaster = adisaster; }
+
+	public int getAgroup() { return agroup; }
+	public void setAgroup(int agroup) { this.agroup = agroup; }
+}

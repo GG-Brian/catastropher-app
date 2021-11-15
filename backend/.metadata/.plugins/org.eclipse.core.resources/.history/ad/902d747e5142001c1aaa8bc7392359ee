@@ -1,0 +1,66 @@
+package com.itc.catastropher.data.model;
+
+import java.io.Serializable;
+import java.sql.Date;
+import java.util.HashSet;
+import java.util.Set;
+
+import javax.persistence.CascadeType;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
+
+@Entity @Table(name = "hgroup")
+public class Helpgroup implements Serializable{
+	private static final long serialVersionUID = 1L;
+	
+	@Id @GeneratedValue(strategy = GenerationType.IDENTITY) long id;
+	String task;
+	Date creation;
+	
+	@ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.PERSIST)
+	@JoinTable(name = "help",
+		joinColumns = {
+				@JoinColumn(name = "agroup", referencedColumnName = "id",
+						nullable = false, updatable = false)},
+		inverseJoinColumns = {
+				@JoinColumn(name = "adisaster", referencedColumnName = "id",
+						nullable = false, updatable = false)})
+	public Set<Disaster> disasters = new HashSet<>();
+		
+	@OneToMany(mappedBy = "Supporter", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+	public Set<Supporter> supporters;
+	
+	
+	
+	public Helpgroup() {}
+	public Helpgroup(int id, String task, Date creation) {
+		super();
+		this.id = id;
+		this.task = task;
+		this.creation = creation;
+	}
+	
+	public long getId() { return id; }
+	public void setId(long id) { this.id = id; }
+	
+	public Date getCreation() { return creation; }
+	public void setCreation(Date creation) { this.creation = creation; }
+	
+	public String getTask() { return task; }
+	public void setTask(String task) { this.task = task; }
+
+	
+	public Set<Disaster> getDisasters() { return disasters; }
+	public void setDisasters(Set<Disaster> disasters) {	this.disasters = disasters; }
+	
+	public Set<Supporter> getSupporters() { return supporters; }
+	public void setSupporters(Set<Supporter> supporters) {	this.supporters = supporters; }
+}

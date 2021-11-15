@@ -1,0 +1,9 @@
+package com.itc.catastropher.data.model;
+
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
+@Entity @Table(name = "help")
+public class Helps {
+
+}

@@ -1,0 +1,5 @@
+package com.itc.catastropher.data.service;
+
+public interface IHelpsService {
+
+}

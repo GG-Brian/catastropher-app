@@ -1,0 +1,29 @@
+package com.itc.catastropher.data.model;
+
+import java.io.Serializable;
+
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity @Table(name = "help")
+public class Helps implements Serializable {
+	private static final long serialVersionUID = 1L;
+	
+	@Id long adisaster;
+	@Id long agroup;
+	
+	public Helps() {}
+	public Helps(long adisaster, long agroup) {
+		super();
+		this.adisaster = adisaster;
+		this.agroup = agroup;
+	}
+	
+	
+	public long getAdisaster() { return adisaster; }
+	public void setAdisaster(long adisaster) { this.adisaster = adisaster; }
+	
+	public long getAgroup() { return agroup; }
+	public void setAgroup(long agroup) { this.agroup = agroup; }
+}

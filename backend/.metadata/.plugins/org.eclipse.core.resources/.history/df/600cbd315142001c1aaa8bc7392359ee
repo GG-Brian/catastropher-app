@@ -1,0 +1,62 @@
+package com.itc.catastropher.data.model;
+
+import java.io.Serializable;
+import java.sql.Date;
+
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
+
+@Entity @Table(name = "supporter")
+public class Supporter implements Serializable {
+	private static final long serialVersionUID = 1L;
+	
+	@Id String dni;
+	String name;
+	int age;
+	Date since;
+	
+	@ManyToOne(fetch = FetchType.LAZY, optional = false)
+	@JoinColumn(name = "id", referencedColumnName="id")
+	Helpgroup thegroup;
+	
+	public Supporter() {}
+	public Supporter(String dni, String name, int age, Date since, Helpgroup thegroup) {
+		super();
+		this.dni = dni;
+		this.name = name;
+		this.age = age;
+		this.since = since;
+		this.thegroup = thegroup;
+	}
+	
+	public String getDni() { return dni; }
+	public void setDni(String dni) { this.dni = dni; }
+	
+	public String getName() { return name; }
+	public void setName(String name) { this.name = name; }
+	
+	public int getAge() { return age; }
+	public void setAge(int age) { this.age = age; }
+	
+	public Date getSince() { return since; }
+	public void setSince(Date since) { this.since = since; }
+	
+	
+	
+	public Helpgroup getThegroup() {
+		return thegroup;
+	}
+	public void setThegroup(Helpgroup thegroup) {
+		this.thegroup = thegroup;
+	}
+	
+	
+	
+	
+
+	
+}
