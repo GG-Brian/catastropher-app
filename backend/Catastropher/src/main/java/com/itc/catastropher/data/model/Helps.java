@@ -9,17 +9,21 @@ import javax.persistence.ManyToOne;
 import javax.persistence.MapsId;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity @Table(name = "help")
 public class Helps implements Serializable {
 	private static final long serialVersionUID = 1L;
 	
-	@EmbeddedId HelpsPrimaryKeys ids;
+	@EmbeddedId HelpsPrimaryKeys relation;
 	
+	@JsonIgnore
 	@ManyToOne
 	@MapsId("disasterId")
 	@JoinColumn(name = "adisaster")
 	Disaster disaster;
 	
+	@JsonIgnore
 	@ManyToOne
 	@MapsId("hgroupId")
 	@JoinColumn(name = "agroup")
@@ -27,16 +31,16 @@ public class Helps implements Serializable {
 	
 	
 	public Helps() {}
-	public Helps(HelpsPrimaryKeys ids, Disaster disaster, Helpgroup group) {
+	public Helps(HelpsPrimaryKeys relation, Disaster disaster, Helpgroup group) {
 		super();
-		this.ids = ids;
+		this.relation = relation;
 		this.disaster = disaster;
 		this.group = group;
 	}
 	
 	
-	public HelpsPrimaryKeys getIds() { return ids; }
-	public void setIds(HelpsPrimaryKeys ids) { this.ids = ids; }
+	public HelpsPrimaryKeys getRelation() { return relation; }
+	public void setRelation(HelpsPrimaryKeys relation) { this.relation = relation; }
 
 	public Disaster getDisaster() { return disaster; }
 	public void setDisaster(Disaster disaster) { this.disaster = disaster; }

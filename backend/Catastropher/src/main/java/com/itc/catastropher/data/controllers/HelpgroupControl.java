@@ -73,11 +73,11 @@ public class HelpgroupControl {
 	}
 	
 	
-	//aa
 	
-	/*@GetMapping("/groups/disasters")
+	
+	@GetMapping("/disasters/groups")
 	List<Helps> getAllRelations(){
-		return groupService.getAllRelations(); }*/
+		return groupService.getAllRelations(); }
 	
 	@PostMapping("/disasters/groups/{disasterId}/{groupId}")
 	void addRelation(@PathVariable("disasterId") int disasterId, @PathVariable("groupId") int groupId) {

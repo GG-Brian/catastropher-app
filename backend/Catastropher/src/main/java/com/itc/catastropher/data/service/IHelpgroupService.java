@@ -14,7 +14,8 @@ public interface IHelpgroupService {
 	void update(long groupId, Helpgroup changedGroup);
 	void delete(long groupId);
 	
-	//List<Helps> getAllRelations();
+	List<Helps> getAllRelations();
 	void addRelation(Helpgroup grupo, Disaster disaster);
 	void removeRelation(Helpgroup grupo, Disaster disaster);
+
 }

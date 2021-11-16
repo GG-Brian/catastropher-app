@@ -1,5 +1,6 @@
 package com.itc.catastropher.data.service;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -7,13 +8,16 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.itc.catastropher.data.dao.IHelpgroupDao;
+import com.itc.catastropher.data.dao.IHelpsDao;
 import com.itc.catastropher.data.model.Disaster;
 import com.itc.catastropher.data.model.Helpgroup;
+import com.itc.catastropher.data.model.Helps;
 
 @Service
 public class ImplementHelpgroupService implements IHelpgroupService {
 
 	@Autowired IHelpgroupDao groupDao;
+	@Autowired IHelpsDao relationDao;
 	
 	@Override
 	public List<Helpgroup> getAll() {
@@ -58,15 +62,10 @@ public class ImplementHelpgroupService implements IHelpgroupService {
 		groupDao.save(relateGroup);
 	}
 
-	/*public List<Helpgroup> getAll() {
-		return (List<Helpgroup>) groupDao.findAll();
-	}*/
-	
-	/*@Override
+	@Override
 	public List<Helps> getAllRelations() {
-		return (List<Helpgroup>);
-	}*/
-	
-	
+		return (List<Helps>) relationDao.findAll();
+	}
+
 
 }
