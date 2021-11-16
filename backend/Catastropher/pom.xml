@@ -12,7 +12,7 @@
 	<artifactId>Catastropher</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>Catastropher</name>
-	<description>Project containing catastrhope devastations around the globe for analysis purposes, through the use of Ionic Angular (frontend) and Spring Boot App (backend)</description>
+	<description>Demo project for Spring Boot</description>
 	<properties>
 		<java.version>11</java.version>
 	</properties>

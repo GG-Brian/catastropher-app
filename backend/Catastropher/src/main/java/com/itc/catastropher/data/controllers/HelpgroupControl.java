@@ -79,21 +79,21 @@ public class HelpgroupControl {
 	List<Helps> getAllRelations(){
 		return groupService.getAllRelations(); }*/
 	
-	@PostMapping("/groups/disasters/{groupId}/{disasterId}")
-	void addRelation(@PathVariable("groupId") int groupId, @PathVariable("disasterId") int disasterId) {
-		Optional<Helpgroup> relateGroup = groupService.getOne(groupId);
+	@PostMapping("/disasters/groups/{disasterId}/{groupId}")
+	void addRelation(@PathVariable("disasterId") int disasterId, @PathVariable("groupId") int groupId) {
 		Optional<Disaster> relateDisaster = disasterService.getOne(disasterId);
+		Optional<Helpgroup> relateGroup = groupService.getOne(groupId);
 		
 		if (relateGroup.isPresent() && relateDisaster.isPresent()){
 			groupService.addRelation(relateGroup.get(), relateDisaster.get());
 		}
 	}
 	
-	@DeleteMapping("/groups/disasters/{groupId}/{disasterId}")
-	void removeRelation(@PathVariable("groupId") int groupId, @PathVariable("disasterId") int disasterId) {
-		Optional<Helpgroup> relateGroup = groupService.getOne(groupId);
+	@DeleteMapping("/disasters/groups/{disasterId}/{groupId}")
+	void removeRelation(@PathVariable("disasterId") int disasterId, @PathVariable("groupId") int groupId) {
 		Optional<Disaster> relateDisaster = disasterService.getOne(disasterId);
-		
+		Optional<Helpgroup> relateGroup = groupService.getOne(groupId);
+
 		if (relateGroup.isPresent() && relateDisaster.isPresent()){
 			groupService.removeRelation(relateGroup.get(), relateDisaster.get());
 		}

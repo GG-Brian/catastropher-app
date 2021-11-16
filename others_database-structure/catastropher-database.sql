@@ -19,6 +19,7 @@ time TIMESTAMP NOT NULL
 CREATE TABLE hgroup (
 id INT PRIMARY KEY AUTO_INCREMENT,
 task ENUM("Evacuation", "Rescue", "Supplies", "Multitask") NOT NULL,
+place VARCHAR(50) NOT NULL,
 creation DATE NOT NULL
 );
 
@@ -39,7 +40,7 @@ CREATE TABLE supporter (
 dni CHAR(9) PRIMARY KEY NOT NULL,
 name VARCHAR(100) NOT NULL,
 age INT NOT NULL,
-since DATE NOT NULL,
+date DATE NOT NULL,
 thegroup INT,
 
 FOREIGN KEY (thegroup) REFERENCES hgroup(id)
