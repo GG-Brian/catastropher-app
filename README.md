@@ -12,7 +12,7 @@
 
 ## README's Description Content Table
 1. [Usage requirements](#Usage-requirements)
-2. [Diagrams & Models](#Diagrams,-use-cases-and-models)
+2. [Diagrams, use cases & Models](#Diagrams,-use-cases-and-Models)
 3. [Interfaces (project's visual design prototype)](#Prototype-for-intended-visual-interfaces)
 4. [Usability aspects; Interfaces subject grades](#Usability-aspects-for-Interfaces-subject-grades)
 5. [Brief project usage manual instructions (non-develpment users)](#Brief-project-usage-instructions-(user-manual))
