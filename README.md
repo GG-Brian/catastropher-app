@@ -119,6 +119,7 @@ Pretty much before I started this project, I designed its visual interfaces with
 
 
 
+
 ## Usability aspects for Interfaces subject grades
 
 I still don't know, just wait for when I end the frontend (maybe should've done both backend and frontend together instead of focusing only on backend to later go focusing only on frontend)
