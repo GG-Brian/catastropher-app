@@ -53,7 +53,7 @@ There is certain software to be used in order to use this project. The following
 
 2. The project app's use cases comprehends two different types of users; Regular (anonymous) users (only allowed to consult natural disasters and groups) and Administrator (allowed to Create, Consult, Update and Delete data from natural disaster, hgroup and group member (supporter) tables (this also implies they can create or delete data from the relational 'help' table, which merely exists for the many to many relationship between disaster and hgroup tables)). The following image was done using the "Visual Paradign" software (free, not commercial use (nor trial) version, https://www.visual-paradigm.com/download/)
 
-![use-cases-diagram](\others_database-structure\app-use-cases.PNG)
+![use-cases-diagram](/others_database-structure/app-use-cases.PNG)
 
 
 3. Detailed explanation of the table schema;
@@ -78,43 +78,43 @@ Pretty much before I started this project, I designed its visual interfaces with
 
 1. Home (presentation) screen; Basically a brief explanation of the project's app 'Catastropher'. The page footer, along with the next interface images, will be copied from the real ITC webpage and pasted as redirectional links.
 
-![home-or-presentation-screen](\others_prototype\Presentation.png)
+![home-or-presentation-screen](/others_prototype/Presentation.png)
 
 
 
 2. Disaster management screen; Where anyone can consult all natural disasters around the world, and Administrators can manage disasters data. Filtering of data is considered.
 
-![table-disaster-screen](\others_prototype\table-disaster.png)
+![table-disaster-screen](/others_prototype/table-disaster.png)
 
 
 
 3. Disaster-for-group screen; Where anyone can consult which groups helps/helped to which disasters, and Administrators can manage relation data by deleting or adding new data. Filtering of data is considered.
 
-![table-disaster-group-relation](\others_prototype\table-disaster-group-relation.png)
+![table-disaster-group-relation](/others_prototype/table-disaster-group-relation.png)
 
 
 
 4. Group management screen; Where anyone can consult all groups designed & willing to help victims from natural disasters, and administrators can manage groups data. Action of showing supporters inside groups through a link/button on each record to any user is considered.
 
-![table-hgroup-screen](\others_prototype\table-group.png)
+![table-hgroup-screen](/others_prototype/table-group.png)
 
 
 
 5. Supporter management screen; An exclusive screen only accesible for Administrator users, allowing them to manage members of each supportive group.
 
-![table-supporter-screen](\others_prototype\table-supporter.png)
+![table-supporter-screen](/others_prototype/table-supporter.png)
 
 
 
 6. Login screen for Administration; An optional interface designed to allow access for administration users. The purpose of this screen is aslo explained in relatively clear texts.
 
-![login-screen](\others_prototype\Login.png)
+![login-screen](/others_prototype/Login.png)
 
 
 
 7. About us screen; Many popular enterprises have a certain webpage section that acts as a friendly get-to-know interface, that helps upcoming users to trust the enterprise webpage they're visiting by giving them information about the enterprise itself. Since the ITC enterprise this educational project is made for has one and I needed to implement more than 6 interfaces for incremented grades, I decided to pretty much copy and pasted theirs and slightly modificate it.
 
-![about-us-screen](\others_prototype\meet-us.png)
+![about-us-screen](/others_prototype/meet-us.png)
 
 
 
