@@ -102,7 +102,7 @@ Pretty much before I started this project, I designed its visual interfaces with
 
 5. Supporter management screen; An exclusive screen only accesible for Administrator users, allowing them to manage members of each supportive group.
 
-![supporter table screen](/others_prototype/table-supporter.png)
+![supporter table screen](./others_prototype/table-supporter.png)
 
 
 
