@@ -129,6 +129,8 @@ I still don't know, just wait for when I end the frontend (maybe should've done 
 
 ## Brief project usage instructions (user manual)
 
+0. If any errors are found through these next steps, the installation of NodeJs might be needed (might also be needed to install Ionic framework). Both packages are carefully detailed on the next section.
+
 1. Prepare a special folder (if not using the git clone command) for the project (https://github.com/GG-Brian/catastropher-app).
 
 2. Once the project's been cloned/extracted, open two command prompts and locate each one's route into the backend and frontend sides. Once done, execute the command line 'npm install' (this will install all node modules needed for the project to work, getting around 600 MB of space). This might take a while, use that time to activate the MySQL server we're about to make use of soon.
