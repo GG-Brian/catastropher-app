@@ -78,7 +78,7 @@ Pretty much before I started this project, I designed its visual interfaces with
 
 1. Home (presentation) screen; Basically a brief explanation of the project's app 'Catastropher'. The page footer, along with the next interface images, will be copied from the real ITC webpage and pasted as redirectional links.
 
-![home-or-presentation-screen](/others_prototype/Presentation.png)
+![home-or-presentation-screen](/others_prototype/presentation.png)
 
 
 
