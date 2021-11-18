@@ -128,7 +128,7 @@ I still don't know, just wait for when I end the frontend (maybe should've done 
 
 
 
-## Brief project usage instructions   development user manual
+## Brief project usage instructions   user manual
 
 0. If any errors are found through these next steps, the installation of NodeJs might be needed (might also be needed to install Ionic framework). Both packages are carefully detailed on the next section.
 
@@ -143,7 +143,7 @@ I still don't know, just wait for when I end the frontend (maybe should've done 
 
 
 
-## Complete installation manual of IDEs and packages (development users)
+## Complete installation of IDEs and packages   development user manual
 
 ### Java JDK 11.0.6's download link - https://www.oracle.com/es/java/technologies/javase/jdk11-archive-downloads.html
 Please have in mind that, for ease of use, within the **environment variables** of the system there must be one variable called 'JAVA_HOME' and must point into the Java jdk (for organizing purposes, the variable should point to "C:\Program Files\Java\jdk-11.0.6", where it should be located). If it doesn't work, then **add** said route plus "\bin" into the 'Path' variable list and try again.
