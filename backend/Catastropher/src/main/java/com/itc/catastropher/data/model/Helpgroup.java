@@ -35,6 +35,7 @@ public class Helpgroup implements Serializable {
 		inverseJoinColumns = @JoinColumn(name = "adisaster"))
 	public Set<Disaster> disasters = new HashSet<>();
 		
+	
 	@JsonIgnore
 	@OneToMany(mappedBy = "helpgroup")
 	public Set<Supporter> supporters;

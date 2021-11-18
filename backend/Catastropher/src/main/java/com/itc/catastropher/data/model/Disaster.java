@@ -13,6 +13,8 @@ import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity @Table(name = "disaster")
 public class Disaster implements Serializable {
 	private static final long serialVersionUID = 1L;
@@ -25,7 +27,7 @@ public class Disaster implements Serializable {
 	long deceased;
 	Timestamp time;
 	
-	
+	@JsonIgnore
 	@ManyToMany(mappedBy = "disasters")
 	public Set<Helpgroup> groups = new HashSet<>();
 	

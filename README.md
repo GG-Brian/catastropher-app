@@ -1,12 +1,28 @@
 # Full-Stack-Practice (Currently in development)
 
-* This project has been describe in the github project webpage 'https://github.com/GG-Brian/Full-Stack-Practice', at its project description.
+* This project is created and developed for educational purposes towards a real interprise project.
 
-* This proyect is not meant for commercial use, used imagery does not belong to me and this is a **practice** project, made for educational purposes.
+* The development of this project, as seen upon its activation & deployment, would be part of ITC (in spanish, Canarian Tecnology Institute).
 
-* As a very brief explanation to use this project properly (detailed through all this document), 
+* The idea of this project is the development of an app to consult data about natural disasters around the world, and groups created by entities (such as the ITC enterprise itself or others companies) to help victims within said disasters.  
 
-## Requirements
+* This proyect is not meant for commercial use and used imagery does not belong to me because, as previously mentioned,  **This is a project made for educational purposes.**
+
+
+
+## README's Description Content Table
+1. [Usage requirements](#Usage-requirements)
+2. [Diagrams & Models](#Diagrams,-use-cases-and-models)
+3. [Interfaces (project's visual design prototype)](#Prototype-for-intended-visual-interfaces)
+4. [Usability aspects; Interfaces subject grades](#Usability-aspects-for-Interfaces-subject-grades)
+5. [Brief project usage manual instructions (non-develpment users)](#Brief-project-usage-instructions-(user-manual))
+6. [Complete installation manual (development users)](#Complete-installation-manual-of-IDEs-and-packages-(development-users))
+7. [Other aspects; Planning, technologies, repositories, conclusion & opinion and references](#Other-aspects;-Planning,-technologies,-repositories,-conclusions-&-opinions-and-references)
+
+
+
+
+## Usage requirements
 
 There is certain software to be used in order to use this project. The following software is required (used in a Windows 10 **N**ew **T**echnology operative system, I apologize in case there's something I've forgotten to add);
 
@@ -16,7 +32,7 @@ There is certain software to be used in order to use this project. The following
 * Visual Studio Code - version 1.62.0 (user setup) (IDE used mostly on frontend development with ionic)
 * eclipse IDE for Enterprise Java and Web Developers - 2021-09 (IDE used on backend development with Spring)
  
-* ionic framework (for hybrid apps and functionality in different devices)
+* ionic framework (frontend for hybrid apps and functionality in different devices)
  
 * mysql-connector JDBC 8.0.26 (small Java library package for SQL database connection through java files at backend with spring)
 * MySQL Workbench 8.0 CE (SQL database manager, used script is within the project's outer files)
@@ -25,7 +41,106 @@ There is certain software to be used in order to use this project. The following
 * Postman version 9.1.3 (For individual testing of database functionality from either side (backend or frontend))
 
 
-## Installation of IDEs and packages
+
+
+
+## Diagrams, Use cases and Models
+
+1. The database diagram this project uses is the relational database schema represented below (made using the free-of-use DIA software (http://dia-installer.de/index.html.es));
+
+![image](others_database-structure\catastropher-database-diagram.PNG)
+
+
+2. The project app's use cases comprehends two different types of users; Regular (anonymous) users (only allowed to consult natural disasters and groups) and Administrator (allowed to Create, Consult, Update and Delete data from natural disaster, hgroup and group member (supporter) tables (this also implies they can create or delete data from the relational 'help' table, which merely exists for the many to many relationship between disaster and hgroup tables)). The following image was done using the "Visual Paradign" software (free, not commercial use (nor trial) version, https://www.visual-paradigm.com/download/)
+
+![image](others_database-structure\app-use-cases.PNG)
+
+
+3. Detailed explanation of the table schema;
+
+We have the disaster table, which will specify information of the ocurred disaster, such as the origin, destruction volume, the timestamp indicating when it happened.. I decided a disaster could temporarily be associated to no group (null values are accepted on this relationship, something not recommended to do to persist the ease of database structure and maintenance)
+
+Many helping groups from the hgroup table can help victims from different disasters according to their asigned task, place, etc.. I decided a group could temporarily be associated to no disaster (as I said on the previous text, this practice is not recommended at all, I just happened to forget it was a bad practice)
+
+Analysing my app's future functionality and database schema, I realised the need of a new table to contain the many to many relationship between disasters and groups, so a group could be associated with multiple groups and viceversa without key duplication problems
+
+A different relationship bonds the hgroup table with supporter table, one to many relationship where a group can contain many supporters- basically members of help groups-.. As well as at the other table's relationship fields, I decided to make each member have the possibility to be created having NO group associated with it (Bad practice! Do not repeat!)
+
+And finally, the User table; **This last table has nothing to do with all the other tables**, its purpose is to help the project differ between regular users and administration users, by having the data of valid administration users inside. The user table is intended to work the following way; name fields must be unique and passwords are an exact 60-characters-long encripted string value with the use of Bcrypt (the writen password is intended to be encripted with Bcrypth and compared with the given password at its creation).
+
+
+
+
+
+## Prototype for intended visual interfaces
+
+Pretty much before I started this project, I designed its visual interfaces with the 'JustInMind' software (free version). The JustInMind file (ending with extension '.vp') can be found inside the project's 'others_propotype' folder along with the **7 interface images** made with it (There's a bug where the application only shows the one interface marked on green at certain devices).
+
+1. Home (presentation) screen; Basically a brief explanation of the project's app 'Catastropher'. The page footer, along with the next interface images, will be copied from the real ITC webpage and pasted as redirectional links.
+
+![image](others_prototype\Presentation.png)
+
+
+
+2. Disaster management screen; Where anyone can consult all natural disasters around the world, and Administrators can manage disasters data. Filtering of data is considered.
+
+![image](others_prototype\table-disaster.png)
+
+
+
+3. Disaster-for-group screen; Where anyone can consult which groups helps/helped to which disasters, and Administrators can manage relation data by deleting or adding new data. Filtering of data is considered.
+
+![image](others_prototype\table-disaster-group-relation.png)
+
+
+
+4. Group management screen; Where anyone can consult all groups designed & willing to help victims from natural disasters, and administrators can manage groups data. Action of showing supporters inside groups through a link/button on each record to any user is considered.
+
+![image](others_prototype\table-group.png)
+
+
+
+5. Supporter management screen; An exclusive screen only accesible for Administrator users, allowing them to manage members of each supportive group.
+
+![image](others_prototype\table-supporter.png)
+
+
+
+6. Login screen for Administration; An optional interface designed to allow access for administration users. The purpose of this screen is aslo explained in relatively clear texts.
+
+![image](others_prototype\Login.png)
+
+
+
+7. About us screen; Many popular enterprises have a certain webpage section that acts as a friendly get-to-know interface, that helps upcoming users to trust the enterprise webpage they're visiting by giving them information about the enterprise itself. Since the ITC enterprise this educational project is made for has one and I needed to implement more than 6 interfaces for incremented grades, I decided to pretty much copy and pasted theirs and slightly modificate it.
+
+![image](others_prototype\meet-us.png)
+
+
+
+
+## Usability aspects for Interfaces subject grades
+
+I still don't know, just wait for when I end the frontend (maybe should've done both backend and frontend together instead of focusing only on backend to later go focusing only on frontend)
+
+
+
+
+
+## Brief project usage instructions (user manual)
+
+1. Prepare a special folder (if not using the git clone command) for the project (https://github.com/GG-Brian/catastropher-app).
+
+2. Once the project's been cloned/extracted, open two command prompts and locate each one's route into the backend and frontend sides. Once done, execute the command line 'npm install' (this will install all node modules needed for the project to work, getting around 600 MB of space). This might take a while, use that time to activate the MySQL server we're about to make use of soon.
+
+3. When both command prompts finish their respective installation tasks, activate the backend side with the command line 'ng serve -o' and activate the frontend side with the command line 'ionic serve'.
+
+4. Open a new navigation tab on your web search engine and use the URL (http://localhost:8100/home) and enjoy!
+
+
+
+
+## Complete installation manual of IDEs and packages (development users)
 
 ### Java JDK 11.0.6's download link - https://www.oracle.com/es/java/technologies/javase/jdk11-archive-downloads.html
 Please have in mind that, for ease of use, within the **environment variables** of the system there must be one variable called 'JAVA_HOME' and must point into the Java jdk (for organizing purposes, the variable should point to "C:\Program Files\Java\jdk-11.0.6", where it should be located). If it doesn't work, then **add** said route plus "\bin" into the 'Path' variable list and try again.
@@ -115,4 +230,42 @@ You will also need to download and install the database manager, connector and l
 
 
 - 3.6. The PUT (update record) operation works the very same way than the POST operation, but since it always implies specification of the identity of the affected record, the endpoint must end with the identity of the old record (this requirement should also be specified on the endpoint's code to work). The DELETE operation only needs this specification though, no other data specification should be needed!
-+
+
+
+
+## Other aspects; Planning, technologies, repositories, conclusions & opinions and references
+
+### Full-Stack tecnologies used for this project;
+ Backend: 'Spring Hibernate'
+ Frontend: 'Ionic framework'
+For this last one I feel the need to specify I used 'Angular framework' to work with the 'Ionic framework'.
+
+
+### About comparing Stack technologies;
+Even though I used Spring Hibernate and Ionic Framework because the enterprise I develop this project for uses both and I don't really know much about other technologies, I've got to say that the ones I use feels simple and completed, not only that but also intuitive.
+
+I could still mention, at least for glancing over my classmate's shoulder, that Unity as backend feels slightly more complex but I think it's stronger in performancer.. But again, I have never really used any other Stack technology other than Spring Hibernate and Ionic Framework.. If it wasn't because it can give me grades I wouldn't be adding this by assuming the one reading this knows more than I do about Stack technologies (specially when there's probably heaps of webpages giving information and their opinion about them that you can yourself check out! Use the Internet for what it's been created, buddy!).
+
+
+### About repositories;
+I have given this information at the beginning of this README file but.. here's the repository so I can slightly increase my grade I guess? (https://github.com/GG-Brian/catastropher-app)
+
+
+### About planification;
+This project started one day without many of us students knowing it indeed did due to not clear information, as there was a strong confusion wether we needed to be told the project's purpose or make it up ourselves.. And after two weeks of work wasted doing nothing, we were told we should already be developing a made up project.. Then I started working on the different aspects of the project **simultaneously** (I don't recommend this at all, it is better to focus on one thing at a time rather than constantly changing what you're doing to resume another aspect (or else wave at your headache and stress! ^^)).
+
+This proyect started on 11th of October 2021 and it's previewed to end on 12th of December 2021... Pretty much the entire first month and half the second, I'be been focusing mainly on the backend, on every table's CRUD (Create, Read, Update, Delete) management.. And everytime I'd be stuck too much and felt my brain numb, I'd switch to simple tasks, such as creating the project's visual prototype, creating the database and then its schema, creating the use cases, completing constant tasks from Enterprise Management subject course, creating this really large README file.. And every time my brain wasn't stressed, I'd come back to the backend development.
+
+This focusing of the backend, along with the simple tasks, is currently ending as I'm writing this (18th of November 2021) with the user database configuration (I'd say I'll get it done in about a week if I finally find how to make it right?), then I'll continue with the frontend (modifying the backend if needed) along with the Enterprise Management subject's project task of entire crud with models and classes as an Odoo module.
+
+
+### Conclusion, opinions and thoughts
+My conclusion about this project is that I could have improved it with another idea, one that doesn't give me the problems this one gave me (such as the not-recommended null relations and particularities between backend models), but even so, this proyect helped me learn how to face same problems in future full-stack projects, so I'm happy with that.
+
+My opinion about this app? I think it's rather useless because pretty much only worried or particularly interested people would like to check about disasters and groups that helped on these, and I'm not like one of those.. Though I must say it COULD be useful for giving information about certain disasters never shown on the public news.
+
+So yeah, my thoughts about my project is that it is rather a practice proyect than one actually useful for nowadays.. But I still went forward with the project idea because I wasted two weeks without knowing I had to make it up myself, and I culdn't afford days to get it right.
+
+
+### Links and references
+I gave them whenever needed, just scroll up and find where I mention each software (most of them are on the [Installation of IDEs and packages for development users](#Complete-installation-manual-of-IDEs-and-packages-(development-users)) section while a few others are on the [Diagrams, use cases and Models](#Diagrams-use-cases-and-Models) section).
