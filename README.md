@@ -15,9 +15,9 @@
 2. [Diagrams of use cases & models](#Diagrams-of-use-cases-and-Models)
 3. [Interfaces (project's visual design prototype)](#Prototype-for-intended-visual-interfaces)
 4. [Usability aspects; Interfaces subject grades](#Usability-aspects-for-Interfaces-subject-grades)
-5. [Brief project usage manual instructions (non-develpment users)](#Brief-project-usage-instructions-(user-manual))
-6. [Complete installation manual (development users)](#Complete-installation-manual-of-IDEs-and-packages-(development-users))
-7. [Other aspects; Planning, technologies, repositories, conclusion & opinion and references](#Other-aspects;-Planning,-technologies,-repositories,-conclusions-&-opinions-and-references)
+5. [Brief project usage manual instructions (non-develpment users)](#Brief-project-usage-instructions---user-manual)
+6. [Complete installation manual (development users)](#Complete-installation-of-IDEs-and-packages---development-user-manual)
+7. [Other aspects; Planning, technologies, repositories, conclusion & opinion and references](#Planning---technologies---repositories---conclusions-&-opinions-and-references)
 
 
 
@@ -128,7 +128,7 @@ I still don't know, just wait for when I end the frontend (maybe should've done 
 
 
 
-## Brief project usage instructions (user manual)
+## Brief project usage instructions   development user manual
 
 0. If any errors are found through these next steps, the installation of NodeJs might be needed (might also be needed to install Ionic framework). Both packages are carefully detailed on the next section.
 
@@ -236,7 +236,7 @@ You will also need to download and install the database manager, connector and l
 
 
 
-## Other aspects; Planning, technologies, repositories, conclusions & opinions and references
+## Planning   technologies   repositories   conclusions & opinions and references
 
 ### Full-Stack tecnologies used for this project;
  Backend: 'Spring Hibernate'
