@@ -90,13 +90,13 @@ Pretty much before I started this project, I designed its visual interfaces with
 
 3. Disaster-for-group screen; Where anyone can consult which groups helps/helped to which disasters, and Administrators can manage relation data by deleting or adding new data. Filtering of data is considered.
 
-![disaster x group table relation screen](/others_prototype/table-disaster-group-relation.png)
+![disaster x group table relation screen](/others_prototype/table-disaster-group-relation.PNG)
 
 
 
 4. Group management screen; Where anyone can consult all groups designed & willing to help victims from natural disasters, and administrators can manage groups data. Action of showing supporters inside groups through a link/button on each record to any user is considered.
 
-![hgroup table screen](/others_prototype/table-group.png)
+![hgroup table screen](/others_prototype/table-group.PNG)
 
 
 
