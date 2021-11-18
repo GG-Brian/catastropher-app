@@ -17,7 +17,7 @@
 4. [Usability aspects; Interfaces subject grades](#Usability-aspects-for-Interfaces-subject-grades)
 5. [Brief project usage manual instructions (non-develpment users)](#Brief-project-usage-instructions---user-manual)
 6. [Complete installation manual (development users)](#Complete-installation-of-IDEs-and-packages---development-user-manual)
-7. [Other aspects; Planning, technologies, repositories, conclusion & opinion and references](#Other-aspects;-Planning---technologies---repositories---conclusions---opinion-and-references)
+7. [Other aspects; Planning, technologies, repositories, conclusion & opinion and references](#Other-aspects(;)-Planning---technologies---repositories---conclusions---opinion-and-references)
 
 
 
