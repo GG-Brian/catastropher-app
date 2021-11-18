@@ -12,7 +12,7 @@
 
 ## README's Content Table
 1. [Usage requirements](#Usage-requirements)
-2. [Diagrams, use cases & models](#Diagrams,-use-cases-and-Models)
+2. [Diagrams of use cases & models](#Diagrams-of-use-cases-and-Models)
 3. [Interfaces (project's visual design prototype)](#Prototype-for-intended-visual-interfaces)
 4. [Usability aspects; Interfaces subject grades](#Usability-aspects-for-Interfaces-subject-grades)
 5. [Brief project usage manual instructions (non-develpment users)](#Brief-project-usage-instructions-(user-manual))
@@ -44,7 +44,7 @@ There is certain software to be used in order to use this project. The following
 
 
 
-## Diagrams, use cases and Models
+## Diagrams of use cases and Models
 
 1. The database diagram this project uses is the relational database schema represented below (made using the free-of-use DIA software (http://dia-installer.de/index.html.es));
 
