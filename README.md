@@ -10,7 +10,7 @@
 
 
 
-## README's Description Content Table
+## README's Content Table
 1. [Usage requirements](#Usage-requirements)
 2. [Diagrams, use cases & models](#Diagrams,-use-cases-and-Models)
 3. [Interfaces (project's visual design prototype)](#Prototype-for-intended-visual-interfaces)
