@@ -44,7 +44,7 @@ There is certain software to be used in order to use this project. The following
 
 
 
-## Diagrams, Use cases and Models
+## Diagrams, use cases and Models
 
 1. The database diagram this project uses is the relational database schema represented below (made using the free-of-use DIA software (http://dia-installer.de/index.html.es));
 
