@@ -48,7 +48,7 @@ There is certain software to be used in order to use this project. The following
 
 1. The database diagram this project uses is the relational database schema represented below (made using the free-of-use DIA software (http://dia-installer.de/index.html.es));
 
-![database-diagram](\others_database-structure\catastropher-database-diagram.PNG)
+![database-diagram](/others_database-structure/catastropher-database-diagram.PNG)
 
 
 2. The project app's use cases comprehends two different types of users; Regular (anonymous) users (only allowed to consult natural disasters and groups) and Administrator (allowed to Create, Consult, Update and Delete data from natural disaster, hgroup and group member (supporter) tables (this also implies they can create or delete data from the relational 'help' table, which merely exists for the many to many relationship between disaster and hgroup tables)). The following image was done using the "Visual Paradign" software (free, not commercial use (nor trial) version, https://www.visual-paradigm.com/download/)
