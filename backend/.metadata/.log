@@ -1931,3 +1931,15 @@ This warning can be switched off on the Team > Git > Confirmations and Warnings 
 
 !ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-11-19 17:26:05.557
 !MESSAGE executing callback sts4.classpath.WRayeHcf SUCCESS [done]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-11-19 18:40:54.084
+!MESSAGE ClasspathListenerHandler removeClasspathListener sts4.classpath.WRayeHcf
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-11-19 18:40:54.085
+!MESSAGE unsubscribing from classpath changes: sts4.classpath.WRayeHcf
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-11-19 18:40:54.086
+!MESSAGE subsribers = {}
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-11-19 18:40:54.086
+!MESSAGE ClasspathListenerHandler removeClasspathListener sts4.classpath.WRayeHcf => OK
