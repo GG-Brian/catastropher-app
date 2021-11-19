@@ -2,6 +2,7 @@ package com.itc.catastropher.data.model;
 
 import java.io.Serializable;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
@@ -10,8 +11,8 @@ import javax.persistence.Table;
 public class User implements Serializable{
 	private static final long serialVersionUID = 1L;
 	
-	@Id String name;
-	String password;
+	@Id @Column(length = 30, unique = true) String name;
+		@Column(length = 60) String password;
 	
 	public User() {}
 

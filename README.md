@@ -267,7 +267,7 @@ My conclusion about this project is that I could have improved it with another i
 
 My opinion about this app? I think it's rather useless because pretty much only worried or particularly interested people would like to check about disasters and groups that helped on these, and I'm not like one of those.. Though I must say it COULD be useful for giving information about certain disasters never shown on the public news.
 
-So yeah, my thoughts about my project is that it is rather a practice proyect than one actually useful for nowadays.. But I still went forward with the project idea because I wasted two weeks without knowing I had to make it up myself, and I culdn't afford days to get it right (also because I overlooked ITC's proyects and they were generally about heart's wellbeing, such as one of their projects that tried to improve the heart's ecosystem in some way I cannot recall). The ITC enterprises webpage is the following (https://www.itccanarias.org/web/es/).
+So yeah, my thoughts about my project is that it is rather a practice proyect than one actually useful for nowadays.. But I still went forward with the project idea because I wasted two weeks without knowing I had to make it up myself, and I culdn't afford days to get it right (also because I overlooked ITC's proyects and they were generally about heart's welbeing, such as one of their projects that tried to improve the heart's ecosystem in some way I cannot recall). The ITC enterprises webpage is the following (https://www.itccanarias.org/web/es/).
 
 
 ### Links and references

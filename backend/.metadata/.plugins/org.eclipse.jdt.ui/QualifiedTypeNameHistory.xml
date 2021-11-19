@@ -14,6 +14,8 @@
     <fullyQualifiedTypeName name="com.itc.catastropher.data.service.IUserService"/>
     <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.GetMapping"/>
     <fullyQualifiedTypeName name="java.util.Optional"/>
-    <fullyQualifiedTypeName name="com.itc.catastropher.data.model.User"/>
     <fullyQualifiedTypeName name="com.fasterxml.jackson.annotation.JsonIgnore"/>
+    <fullyQualifiedTypeName name="javax.persistence.Column"/>
+    <fullyQualifiedTypeName name="org.springframework.data.repository.CrudRepository"/>
+    <fullyQualifiedTypeName name="com.itc.catastropher.data.model.User"/>
 </qualifiedTypeNameHistroy>
