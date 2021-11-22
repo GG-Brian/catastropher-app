@@ -1,19 +1,19 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { IonicModule } from '@ionic/angular';
 
-import { NavigatorComponent } from './navigator.component';
+import { RelationDisasterGroupComponent } from './relation-disaster-group.component';
 
-describe('NavigatorComponent', () => {
-  let component: NavigatorComponent;
-  let fixture: ComponentFixture<NavigatorComponent>;
+describe('RelationDisasterGroupComponent', () => {
+  let component: RelationDisasterGroupComponent;
+  let fixture: ComponentFixture<RelationDisasterGroupComponent>;
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [ NavigatorComponent ],
+      declarations: [ RelationDisasterGroupComponent ],
       imports: [IonicModule.forRoot()]
     }).compileComponents();
 
-    fixture = TestBed.createComponent(NavigatorComponent);
+    fixture = TestBed.createComponent(RelationDisasterGroupComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   }));

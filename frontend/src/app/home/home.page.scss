@@ -25,3 +25,30 @@
 #container a {
   text-decoration: none;
 }
+
+
+
+
+
+// These for CSS specifications separate content by three columns so text can be justified to center
+.column { 
+  float: left; 
+  text-align: justify;
+}
+
+/* Clear floats after the columns */
+.row::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+@media only screen and (max-width: 1150px) {
+  .left, .right { width: 10%; }
+  .middle { width: 80%; }
+}
+
+@media only screen and (min-width: 1150px) {
+  .left, .right { width: 17.5%; }
+  .middle { width: 65%; }
+}
