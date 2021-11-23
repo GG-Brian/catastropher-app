@@ -8,18 +8,21 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 
 // components intended to be always on display
-import { ItcFooterComponent } from './itc-footer/itc-footer.component';
-import { ItcBarComponent } from './itc-bar/itc-bar.component';
+import { ItcFooterComponent } from './views/itc-footer/itc-footer.component';
+import { ItcBarComponent } from './views/itc-bar/itc-bar.component';
 
 // views with database data and management
-import { DisasterComponent } from './disaster/disaster.component';
-import { HelpgroupComponent } from './helpgroup/helpgroup.component';
-import { RelationDisasterGroupComponent } from './relation-disaster-group/relation-disaster-group.component';
-import { SupporterComponent } from './supporter/supporter.component';
+import { DisasterComponent } from './views/disaster/disaster.component';
+import { HelpgroupComponent } from './views/helpgroup/helpgroup.component';
+import { RelationDisasterGroupComponent } from './views/relation-disaster-group/relation-disaster-group.component';
+import { SupporterComponent } from './views/supporter/supporter.component';
 
 // other component views
-import { LoginComponent } from './login/login.component';
-import { MeetUsComponent } from './meet-us/meet-us.component';
+import { LoginComponent } from './views/login/login.component';
+import { MeetUsComponent } from './views/meet-us/meet-us.component';
+
+// Used into meet-us view for document carousel injection
+import { JavascriptLoaderService } from "./services/javascript-loader.service"
 
 
 @NgModule({
@@ -36,7 +39,7 @@ import { MeetUsComponent } from './meet-us/meet-us.component';
   ],
   entryComponents: [],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule],
-  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
+  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }, JavascriptLoaderService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

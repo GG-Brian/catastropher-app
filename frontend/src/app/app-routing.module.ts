@@ -3,19 +3,19 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 import { CommonModule } from '@angular/common';
 
 // views with database data and management
-import { DisasterComponent } from './disaster/disaster.component';
-import { HelpgroupComponent } from './helpgroup/helpgroup.component';
-import { RelationDisasterGroupComponent } from './relation-disaster-group/relation-disaster-group.component';
-import { SupporterComponent } from './supporter/supporter.component';
+import { DisasterComponent } from './views/disaster/disaster.component';
+import { HelpgroupComponent } from './views/helpgroup/helpgroup.component';
+import { RelationDisasterGroupComponent } from './views/relation-disaster-group/relation-disaster-group.component';
+import { SupporterComponent } from './views/supporter/supporter.component';
 
 // other component views
-import { LoginComponent } from './login/login.component';
-import { MeetUsComponent } from './meet-us/meet-us.component';
+import { LoginComponent } from './views/login/login.component';
+import { MeetUsComponent } from './views/meet-us/meet-us.component';
 
 
 
 const routes: Routes = [
-  { path: 'home', loadChildren: () => import('./home/home.module').then( m => m.HomePageModule) },
+  { path: 'home', loadChildren: () => import('./views/home/home.module').then( m => m.HomePageModule) },
 
   { path: 'login', component: LoginComponent},
   { path: 'us', component: MeetUsComponent},
