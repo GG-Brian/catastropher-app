@@ -8,8 +8,8 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 
 // components intended to be always on display
-import { ItcFooterComponent } from './views/itc-footer/itc-footer.component';
-import { ItcBarComponent } from './views/itc-bar/itc-bar.component';
+import { ItcFooterComponent } from './shared-components/itc-footer/itc-footer.component';
+import { ItcBarComponent } from './shared-components/itc-bar/itc-bar.component';
 
 // views with database data and management
 import { DisasterComponent } from './views/disaster/disaster.component';
@@ -23,6 +23,7 @@ import { MeetUsComponent } from './views/meet-us/meet-us.component';
 
 // Used into meet-us view for document carousel injection
 import { JavascriptLoaderService } from "./services/javascript-loader.service"
+import { SharedModuleModule } from './shared-components/shared-module';
 
 
 @NgModule({
@@ -33,12 +34,10 @@ import { JavascriptLoaderService } from "./services/javascript-loader.service"
     RelationDisasterGroupComponent,
     SupporterComponent,
     LoginComponent,
-    MeetUsComponent,
-    ItcBarComponent,
-    ItcFooterComponent
+    MeetUsComponent
   ],
   entryComponents: [],
-  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule],
+  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, SharedModuleModule],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }, JavascriptLoaderService],
   bootstrap: [AppComponent],
 })

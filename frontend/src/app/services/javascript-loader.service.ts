@@ -9,10 +9,10 @@ export class JavascriptLoaderService {
 
   LoadMeetUsFiles (files: string [] ){
     for (let file of files){
-      let script = document.createElement("script");
-      script.src = "./assets/us-view/JavaScript" + file + ".js";
-      let body = document.getElementsByTagName("ion-content")[0];
-      body.appendChild(script);
+      let scriptObject = document.createElement("script");
+      scriptObject.src = "./assets/us-view/JavaScript/" + file + ".js";
+      let body = document.getElementsByTagName("body")[0];
+      body.appendChild(scriptObject);
     }
   }
 }

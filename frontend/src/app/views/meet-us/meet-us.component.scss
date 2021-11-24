@@ -3,40 +3,41 @@
 
 // centering of ion-card & carousel
 .centered {
-    text-align: center !important;
-    margin: auto !important;
-    width: 600px !important;
-    @media only screen and (max-width: 750px) {
-        width: auto !important;
-    }
+  display: inline-flex !important;
+  text-align: center !important;
+  // margin: auto !important;
+  width: auto !important;
+  @media only screen and (max-width: 800px) {
+      display: contents !important;
+  }
 }
+
+.background-very-weak-gray { background-color: rgb(240, 240, 240); }
 
 
 
 // These for CSS specifications separate content by three columns so text can be justified to center
-.column { 
-    float: left; 
-    text-align: justify;
-  }
+// .column { 
+//   float: left; 
+//   text-align: justify;
+// }
   
+
+// .left, .right { width: 10%; }
+// .middle { width: 80%; }
   
-  @media only screen and (max-width: 1150px) {
-    .left, .right { width: 10%; }
-    .middle { width: 80%; }
-  }
-  
-  @media only screen and (min-width: 1150px) {
-    .left, .right { width: 17.5%; }
-    .middle { width: 65%; }
-  }
+// @media only screen and (min-width: 1150px) {
+//   .left, .right { width: 17.5%; }
+//   .middle { width: 65%; }
+// }
 
 
 
 
-  /* {box-sizing:border-box} */
+/* {box-sizing:border-box} */
 /* Slideshow container */
 .slideshow-container {
-  max-width: 1000px;
+  // max-width: 1000px;
   position: relative;
   margin: auto;
   text-align: left;
@@ -77,10 +78,10 @@
 /* Caption text */
 .text {
   color: #000000;
-  font-size: 15px;
-  padding: 8px 12px;
-  position: absolute;
-  bottom: -20px;
+  font-size: 21px;
+  // padding: 8px 12px;
+  // position: absolute;
+  // bottom: -20px;
   width: 100%;
   text-align: center;
 }
