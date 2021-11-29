@@ -1,1 +1,51 @@
-#footer { background-color: rgb(222, 222, 222); }
+#footer { background-color: rgb(240, 240, 240); }
+
+.content-center { text-align: center; }
+
+.small-gray {
+    font-size: smaller;
+    color: gray !important;
+}
+.styless { 
+    color: black;
+    text-decoration: none;
+ }
+
+
+
+
+ .block:hover {
+    animation: fadein 1s;
+    -webkit-animation: fadein 1s; 
+    -moz-animation: fadein 1s;
+
+    transition: 0.75s;}
+ 
+@keyframes fadein {
+    from { background-color: rgb(240, 240, 240) }
+    to { background-color: rgb(200, 200, 200) } }
+@-webkit-keyframes fadein {
+    from { background-color: rgb(240, 240, 240) }
+    to { background-color: rgb(200, 200, 200) } }
+@-moz-keyframes fadein {
+    from { background-color: rgb(240, 240, 240) }
+    to { background-color: rgb(200, 200, 200) } }
+
+
+    
+.block {
+    animation: fadeout 1s;
+    -webkit-animation: fadeout 1s; 
+    -moz-animation: fadeout 1s;
+    
+    transition: 0.75s;}
+
+@keyframes fadeout {
+    from { background-color: rgb(200, 200, 200) }
+    to { background-color: rgb(240, 240, 240) } }
+@-webkit-keyframes fadeout {
+    from { background-color: rgb(200, 200, 200) }
+    to { background-color: rgb(240, 240, 240) } }
+@-moz-keyframes fadeout {
+    from { background-color: rgb(200, 200, 200) }
+    to { background-color: rgb(240, 240, 240) } }
