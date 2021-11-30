@@ -1,16 +1,17 @@
-.text-gray { color: grayscale($color: #333333); }
+.text-dark-gray { color: rgb(88, 88, 88); }
 .text-blue { color: blue }
 
 // centering of ion-card & carousel
 .centered {
-  display: inline-flex !important;
+  
   text-align: center !important;
   // margin: auto !important;
   width: auto !important;
   @media only screen and (max-width: 800px) {
-      display: contents !important;
+      // display: contents !important;
   }
 }
+
 
 .background-very-weak-gray { background-color: rgb(240, 240, 240); }
 

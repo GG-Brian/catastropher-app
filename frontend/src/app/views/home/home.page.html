@@ -1,52 +1,47 @@
+
 <ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
-  </ion-toolbar>
+  <app-itc-bar></app-itc-bar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
   <div id="container">
-    <img src="../../assets/icon/logo-app.PNG" class="image-presentation" width="250px" height="200px" alt="Catastropher app logo" />
+    <br><br><br><br>
+    <img src="../../assets/icon/logo-app.PNG" class="image-presentation" width="270px" height="254px" alt="Catastropher app logo" />
     <br><br>
-
+    <ion-grid>
+      <ion-row>
+        <ion-col></ion-col>
+        <ion-col size="11" size-sm="10" size-lg="9">
+          <h4 class="ion-text-justify text-dark-gray">
+              Entre nuestras últimas novdedados, ITC se ha comprometido a ayudar a la humanidad ante desastres
+              debido al tan mencionado desastre del volcán activo de La Palma, isla del océano atlántico perteneciente
+              a la comunidad autónoma de Canarias.
+          </h4>
+          <br>
+          <h4 class="ion-text-justify text-dark-gray">
+              Con nuestra nueva aplicación multiplataforma 'Catastropher', cualquier persona podrá visualizar todos los
+              desastres naturales que ocurren en el mundo, junto a los grupos que nosotros diseñamos para hacerse cargo
+              de ayudar a los desfavorecidos entre los estragos.
+          </h4>    
+          <br>
+          <h4 class="ion-text-justify text-dark-gray">
+              En nuestra iniciativa mantendremos la visualización de datos totalmente gratuita, y nos preocuparemos por
+              mantener al día la información.
+          </h4>
+        </ion-col>
+        <ion-col></ion-col>
+      </ion-row>
+    </ion-grid>
     <div class="column left"><br></div>
 
     <div class="column middle">
-      <ion-text color="gray">
-        <h4>
-          Entre nuestras últimas novdedados, ITC se ha comrpometido a ayudar a la humanidad ante desastres
-          debido al tan mencionado desastre del volcán activo de La Palma, isla del océano atlántico perteneciente
-          a la comunidad autónoma de Canarias.
-        </h4>
-      </ion-text>
-      <br>
-      <ion-text color="gray">
-        <h4>
-          Con nuestra nueva aplicación multiplataforma 'Catastropher', cualquier persona podrá visualizar todos los
-          desastres naturales que ocurren en el mundo, junto a los grupos que nosotros diseñamos para hacerse cargo
-          de ayudar a los desfavorecidos entre los estragos.
-        </h4>
-      </ion-text>
-      <br>
-      <ion-text color="gray">
-        <h4>
-          En nuestra iniciativa mantendremos la visualización de datos totalmente gratuita, y nos preocuparemos por
-          mantener al día la información.
-        </h4>
-      </ion-text>
+      
     </div>
 
     <div class="column right"><br></div>
 
+    <app-itc-footer></app-itc-footer>
   </div>
 
-  <app-itc-footer></app-itc-footer>
+
 </ion-content>
