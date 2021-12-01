@@ -18,17 +18,17 @@
     <table class="table-centering">
       <thead>
         <tr class="cell-header">
-          <th class="cell-header-update">Actualizar</th>
+          <th></th>
           <th>Tipo</th>
           <th>Daños</th>
           <th>Víctimas</th>
           <th>Fecha y hora</th>
-          <th class="cell-header-delete">Eliminar</th>
+          <th></th>
         </tr>
       </thead>
       <tbody *ngFor="let disaster of disasters">
         <tr class="cell-row">
-          <td><ion-button native color="primary" (click)="updateDisaster(disaster.id)">Actualizar</ion-button></td>
+          <td class="cell-row-update"><ion-button native color="primary" (click)="openIonModal(disaster.id)">Actualizar</ion-button></td>
           <td>{{disaster.type}}</td>
           <td>
             {{disaster.origin}}<br>
@@ -39,7 +39,7 @@
             <strong>Fallecidos:</strong> {{disaster.deceased}}
           </td>
           <td>{{disaster.time}}</td>
-          <td><ion-button native color="danger" (click)="modalDelete(disaster.id)">Eliminar</ion-button></td>
+          <td class="cell-row-delete"><ion-button native color="danger" (click)="modalDelete(disaster.id)">Eliminar</ion-button></td>
         </tr>
       </tbody>
     </table>

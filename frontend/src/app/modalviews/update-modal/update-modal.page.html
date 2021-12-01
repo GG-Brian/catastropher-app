@@ -1,0 +1,39 @@
+<ion-header>
+  <div class="color-update">
+    <br>
+    <ion-title class="ion-text-center modal-title">
+      <ion-text color="light">Modificar desastre</ion-text>
+    </ion-title>
+    <br>
+  </div>
+</ion-header>
+
+<ion-content class="ion-text-center">
+  <br>
+  <div *ngIf="myDisaster">
+    <table class="table-centering">
+      <thead>
+        <tr class="cell-header">
+          <th>Tipo</th>
+          <th>Daños</th>
+          <th>Víctimas</th>
+          <th>Fecha y hora</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-model="myDisaster" class="cell-row">
+          <td>{{myDisaster.type}}</td>
+          <td>
+            {{myDisaster.origin}}<br>
+            {{myDisaster.area}} m²
+          </td>
+          <td>
+            <strong>Heridos:</strong> {{myDisaster.injured}}<br>
+            <strong>Fallecidos:</strong> {{myDisaster.deceased}}
+          </td>
+          <td>{{myDisaster.time}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</ion-content>

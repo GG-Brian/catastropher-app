@@ -21,13 +21,9 @@ export class DisasterService {
 
   constructor(private httpClient: HttpClient) { }
 
-  getDisasters(): Observable<Disaster[]>{
-    return this.httpClient.get<Disaster[]>(this.endpoint);
-  }
+  getDisasters(): Observable<Disaster[]>{ return this.httpClient.get<Disaster[]>(this.endpoint); }
 
-  getDisasterById(id: number): Observable<Disaster>{
-    return this.httpClient.get<Disaster>(this.endpoint + "/" + id);
-  }
+  getDisasterById(id: number): Observable<Disaster>{ return this.httpClient.get<Disaster>(this.endpoint + "/" + id); }
 
   createDisaster(newDisaster: Disaster): Observable<Disaster>{
     let bodyEncoded = new URLSearchParams();

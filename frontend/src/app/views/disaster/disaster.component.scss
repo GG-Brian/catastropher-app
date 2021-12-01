@@ -13,9 +13,6 @@
 
 .table-centering { margin: auto; }
 
-.cell-header-update { color: rgb(88, 88, 88) !important; background-color: rgb(184, 217, 255) !important; }
-.cell-header-delete { color: rgb(88, 88, 88) !important; background-color: rgb(235, 148, 148) !important; }
-
 .cell-header th {
   padding-left: 10px;
   padding-right: 10px;
@@ -26,6 +23,9 @@
   background-color: rgb(50, 122, 204);
   color: rgb(222,222,222);
 }
+
+.cell-row-update { background-color: rgb(184, 217, 255) !important; }
+.cell-row-delete { background-color: rgb(235, 148, 148) !important; }
 .cell-row td {
     padding-left: 10px;
     padding-right: 10px;

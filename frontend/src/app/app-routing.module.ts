@@ -27,6 +27,10 @@ const routes: Routes = [
 
   { path: '', redirectTo: "/home", pathMatch: 'full'},
   { path: '**', redirectTo: "/home", pathMatch: 'full'},
+  {
+    path: 'update-modal',
+    loadChildren: () => import('./modalviews/update-modal/update-modal.module').then( m => m.UpdateModalPageModule)
+  },
 ];
 
 @NgModule({
