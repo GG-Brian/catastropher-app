@@ -1,0 +1,37 @@
+#container {
+    text-align: center;
+  
+    left: 0;
+    right: 0;
+}
+
+
+
+
+.text-dark-gray { color: rgb(88, 88, 88); }
+
+
+.table-centering { margin: auto; }
+
+.cell-header-update { color: rgb(88, 88, 88) !important; background-color: rgb(184, 217, 255) !important; }
+.cell-header-delete { color: rgb(88, 88, 88) !important; background-color: rgb(235, 148, 148) !important; }
+
+.cell-header th {
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  
+  border: 1px solid rgb(222, 222, 222);
+  background-color: rgb(50, 122, 204);
+  color: rgb(222,222,222);
+}
+.cell-row td {
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+  
+    border: 1px solid rgb(66, 66, 66);
+    background-color: rgb(232, 232, 232);
+  }

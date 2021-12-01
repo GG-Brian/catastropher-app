@@ -1,3 +1,53 @@
-<p>
-  disaster works!aaaa
-</p>
+<ion-header>
+  <app-itc-bar></app-itc-bar>
+</ion-header>
+
+<ion-content>
+
+  <div id="container">
+    <div>
+      <br><br><br>
+      <ion-button native color="light" size="large">Agregar nuevo desastre</ion-button>
+    </div>
+    
+    <br><br>
+
+    <h1 class="text-dark-gray">Desastres naturales recogidos por Catastropher</h1>
+    <br>
+
+    <table class="table-centering">
+      <thead>
+        <tr class="cell-header">
+          <th class="cell-header-update">Actualizar</th>
+          <th>Tipo</th>
+          <th>Daños</th>
+          <th>Víctimas</th>
+          <th>Fecha y hora</th>
+          <th class="cell-header-delete">Eliminar</th>
+        </tr>
+      </thead>
+      <tbody *ngFor="let disaster of disasters">
+        <tr class="cell-row">
+          <td><ion-button native color="primary" (click)="updateDisaster(disaster.id)">Actualizar</ion-button></td>
+          <td>{{disaster.type}}</td>
+          <td>
+            {{disaster.origin}}<br>
+            {{disaster.area}} m²
+          </td>
+          <td>
+            <strong>Heridos:</strong> {{disaster.injured}}<br>
+            <strong>Fallecidos:</strong> {{disaster.deceased}}
+          </td>
+          <td>{{disaster.time}}</td>
+          <td><ion-button native color="danger" (click)="modalDelete(disaster.id)">Eliminar</ion-button></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <br><br><br><br><br>
+  </div>
+</ion-content>
+
+<ion-footer>
+  <app-itc-footer></app-itc-footer>
+</ion-footer>

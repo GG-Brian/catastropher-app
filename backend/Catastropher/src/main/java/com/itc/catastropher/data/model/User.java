@@ -1,4 +1,4 @@
-package com.itc.catastropher.data.model;
+/*package com.itc.catastropher.data.model;
 
 import java.io.Serializable;
 
@@ -27,4 +27,4 @@ public class User implements Serializable{
 
 	public String getPassword() { return password; }
 	public void setPassword(String password) { this.password = password; }	
-}
+}*/

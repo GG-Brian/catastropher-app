@@ -3,17 +3,14 @@ import { BrowserModule } from '@angular/platform-browser';
 import { RouteReuseStrategy } from '@angular/router';
 
 import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
+import { HttpClientModule } from '@angular/common/http'
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 
-// components intended to be always on display
-import { ItcFooterComponent } from './shared-components/itc-footer/itc-footer.component';
-import { ItcBarComponent } from './shared-components/itc-bar/itc-bar.component';
-
 // views with database data and management
 import { DisasterComponent } from './views/disaster/disaster.component';
-import { HelpgroupComponent } from './views/helpgroup/helpgroup.component';
+import { HelpgroupComponent } from './views/group/helpgroup.component';
 import { RelationDisasterGroupComponent } from './views/relation-disaster-group/relation-disaster-group.component';
 import { SupporterComponent } from './views/supporter/supporter.component';
 
@@ -37,7 +34,7 @@ import { SharedModuleModule } from './shared-components/shared-module';
     MeetUsComponent
   ],
   entryComponents: [],
-  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, SharedModuleModule],
+  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, SharedModuleModule, HttpClientModule],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }, JavascriptLoaderService],
   bootstrap: [AppComponent],
 })

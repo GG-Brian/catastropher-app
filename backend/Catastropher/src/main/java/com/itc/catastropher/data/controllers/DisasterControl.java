@@ -28,7 +28,7 @@ public class DisasterControl {
 	@Autowired IDisasterService disasterService;
 	@Autowired IHelpgroupService groupService;
 
-	@GetMapping("/disasters")
+	@GetMapping("/disaster")
 	List<Disaster> getAll(){
 		return disasterService.getAll(); }
 	
@@ -43,13 +43,13 @@ public class DisasterControl {
 		return null;
 	}
 	
-	@PostMapping(value="/disasters")
+	@PostMapping(value="/disaster")
 	void add(Disaster newDisaster) {
 		System.out.println(newDisaster.getTime());
 		disasterService.add(newDisaster);
 	}
 	
-	@PostMapping(value="/disasters", consumes="application/json")
+	@PostMapping(value="/disaster", consumes="application/json")
 	void addWithJson(@RequestBody String disasterData) {
 		ObjectMapper mapeadorDatos = new ObjectMapper();
 		try {
@@ -59,13 +59,13 @@ public class DisasterControl {
 		} catch (JsonProcessingException processingError) { processingError.printStackTrace(); }
 	}
 
-	@PutMapping("/disasters/{id}")
+	@PutMapping("/disaster/{id}")
 	void update(@PathVariable("id") int id, Disaster changedDisaster) {
 		System.out.println();
 		disasterService.update(id, changedDisaster);
 	}
 	
-	@DeleteMapping("/disasters/{id}")
+	@DeleteMapping("/disaster/{id}")
 	void delete(@PathVariable("id") int id) {
 		System.out.println();
 		disasterService.delete(id);

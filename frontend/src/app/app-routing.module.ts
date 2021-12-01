@@ -4,7 +4,7 @@ import { CommonModule } from '@angular/common';
 
 // views with database data and management
 import { DisasterComponent } from './views/disaster/disaster.component';
-import { HelpgroupComponent } from './views/helpgroup/helpgroup.component';
+import { HelpgroupComponent } from './views/group/helpgroup.component';
 import { RelationDisasterGroupComponent } from './views/relation-disaster-group/relation-disaster-group.component';
 import { SupporterComponent } from './views/supporter/supporter.component';
 
@@ -20,10 +20,10 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent},
   { path: 'us', component: MeetUsComponent},
 
-  { path: 'disasters', component: DisasterComponent},
-  { path: 'groups', component: HelpgroupComponent},
+  { path: 'disaster', component: DisasterComponent},
+  { path: 'group', component: HelpgroupComponent},
   { path: 'disaster-x-group', component: RelationDisasterGroupComponent},
-  { path: 'supporters', component: SupporterComponent},
+  { path: 'supporter', component: SupporterComponent},
 
   { path: '', redirectTo: "/home", pathMatch: 'full'},
   { path: '**', redirectTo: "/home", pathMatch: 'full'},

@@ -17,7 +17,7 @@ const httpOptionsUsingUrlEncoded = {
 
 export class DisasterService {
 
-  endpoint: string = "http://localhost:8080/disasters"
+  endpoint: string = "http://localhost:8080/disaster"
 
   constructor(private httpClient: HttpClient) { }
 
