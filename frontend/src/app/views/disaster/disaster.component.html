@@ -15,6 +15,7 @@
     <h1 class="text-dark-gray">Desastres naturales recogidos por Catastropher</h1>
     <br>
 
+    <div class="horizontal-scroll">
     <table class="table-centering">
       <thead>
         <tr class="cell-header">
@@ -27,11 +28,11 @@
         </tr>
       </thead>
       <tbody *ngFor="let disaster of disasters">
-        <tr class="cell-row">
-          <td class="cell-row-update"><ion-button native color="primary" (click)="openIonModal(disaster.id)">Actualizar</ion-button></td>
+        <tr class="cell-row row-hovering">
+          <td class="cell-row-update"><ion-button native color="primary" (click)="openIonModal(disaster.id)">Editar</ion-button></td>
           <td>{{disaster.type}}</td>
           <td>
-            {{disaster.origin}}<br>
+            {{disaster.origin}}<br><br>
             {{disaster.area}} m²
           </td>
           <td>
@@ -39,10 +40,11 @@
             <strong>Fallecidos:</strong> {{disaster.deceased}}
           </td>
           <td>{{disaster.time}}</td>
-          <td class="cell-row-delete"><ion-button native color="danger" (click)="modalDelete(disaster.id)">Eliminar</ion-button></td>
+          <td class="cell-row-delete"><ion-button native color="danger" (click)="modalDelete(disaster.id)">Borrar</ion-button></td>
         </tr>
       </tbody>
     </table>
+  </div>
 
     <br><br><br><br><br>
   </div>

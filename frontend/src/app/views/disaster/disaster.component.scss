@@ -10,7 +10,7 @@
 
 .text-dark-gray { color: rgb(88, 88, 88); }
 
-
+.horizontal-scroll { overflow-x: auto; }
 .table-centering { margin: auto; }
 
 .cell-header th {
@@ -26,6 +26,9 @@
 
 .cell-row-update { background-color: rgb(184, 217, 255) !important; }
 .cell-row-delete { background-color: rgb(235, 148, 148) !important; }
+.row-hovering:hover td { background-color: rgb(215, 215, 215) !important; }
+.row-hovering:hover td.cell-row-update { background-color: rgb(163, 197, 233) !important; }
+.row-hovering:hover td.cell-row-delete { background-color: rgb(219, 136, 136) !important; }
 .cell-row td {
     padding-left: 10px;
     padding-right: 10px;

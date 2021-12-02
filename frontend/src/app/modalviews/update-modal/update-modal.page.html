@@ -10,7 +10,9 @@
 
 <ion-content class="ion-text-center">
   <br>
-  <div *ngIf="myDisaster">
+  <h1>Vista previa</h1>
+  <br>
+  <div *ngIf="myDisaster" class="horizontal-scroll">
     <table class="table-centering">
       <thead>
         <tr class="cell-header">
@@ -24,7 +26,7 @@
         <tr ng-model="myDisaster" class="cell-row">
           <td>{{myDisaster.type}}</td>
           <td>
-            {{myDisaster.origin}}<br>
+            {{myDisaster.origin}}<br><br>
             {{myDisaster.area}} m²
           </td>
           <td>
@@ -36,4 +38,59 @@
       </tbody>
     </table>
   </div>
+  <br>
+
+  <div id="record-editor-background">
+    <br><br>
+    <div *ngIf="myDisaster" class="horizontal-scroll">
+      <table class="table-centering">
+        <thead>
+          <tr class="cell-header">
+            <th>Tipo</th>
+            <th>Daños</th>
+            <th>Víctimas</th>
+            <th>Fecha y hora</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="cell-row">
+            <td>
+              <ion-item>
+                <ion-input type="text" required [(ngModel)]="myDisaster.type"></ion-input>
+              </ion-item>
+            </td>
+            <td>
+              <ion-item>
+                <ion-input type="text" required [(ngModel)]="myDisaster.origin"></ion-input>
+              </ion-item>
+              <ion-item>
+                <ion-input type="number" required [(ngModel)]="myDisaster.area"></ion-input>
+              </ion-item>
+            </td>
+            <td>
+              <ion-item>
+                <ion-input type="number" required [(ngModel)]="myDisaster.injured"></ion-input>
+              </ion-item>
+              <ion-item>
+                <ion-input type="number" required [(ngModel)]="myDisaster.deceased"></ion-input>
+              </ion-item>
+            </td>
+            <td>
+              <ion-item>
+                <ion-datetime [(ngModel)]="myDisaster.time" displayFormat="YYYY-MM-DDTHH:mm:ss"></ion-datetime>
+              </ion-item>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <br><br><br><br>
+  </div>
 </ion-content>
+
+<ion-footer class="ion-text-center">
+  <ion-row>
+    <ion-col size="6" id="container-confirm"><ion-button native color="primary">Confirmar</ion-button></ion-col>
+    <ion-col size="6" id="container-cancel"><ion-button native color="danger">Cancelar</ion-button></ion-col>
+  </ion-row>
+</ion-footer>

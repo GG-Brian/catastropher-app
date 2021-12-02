@@ -1047,3 +1047,13 @@
 2021-12-01 17:12:55,557 [Worker-7: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
 2021-12-01 17:12:55,557 [Worker-7: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
 2021-12-01 17:12:55,557 [Worker-7: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Bober5\Desktop\ITC\catastropher\backend\Catastropher\src\test\resources
+2021-12-01 18:39:33,637 [Worker-0: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2021-12-01 22:43:42,838 [Worker-0: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2021-12-02 16:13:21,908 [Worker-7: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2021-12-02 16:13:45,377 [Worker-6: Launching Catastropher - CatastropherApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-12-02 16:13:45,380 [Worker-6: Launching Catastropher - CatastropherApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2021-12-02 16:13:45,384 [Worker-6: Launching Catastropher - CatastropherApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2021-12-02 16:13:45,403 [Worker-6: Launching Catastropher - CatastropherApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2021-12-02 16:13:45,406 [Worker-6: Launching Catastropher - CatastropherApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-12-02 16:13:45,406 [Worker-6: Launching Catastropher - CatastropherApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2021-12-02 16:13:45,407 [Worker-6: Launching Catastropher - CatastropherApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Bober5\Desktop\ITC\catastropher\backend\Catastropher\src\test\resources
