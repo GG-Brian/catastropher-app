@@ -29,7 +29,7 @@
       </thead>
       <tbody *ngFor="let disaster of disasters">
         <tr class="cell-row row-hovering">
-          <td class="cell-row-update"><ion-button native color="primary" (click)="openIonModal(disaster.id)">Editar</ion-button></td>
+          <td class="cell-row-update"><ion-button native color="primary" (click)="modalUpdate(disaster.id)">Editar</ion-button></td>
           <td>{{disaster.type}}</td>
           <td>
             {{disaster.origin}}<br><br>

@@ -26,7 +26,7 @@ export class DisasterComponent implements OnInit {
     })
   }
 
-  async openIonModal(id: number) {
+  async modalUpdate(id: number) {
 
     this.disasterId = id;
     localStorage.setItem("disasterId", `${this.disasterId}`)
