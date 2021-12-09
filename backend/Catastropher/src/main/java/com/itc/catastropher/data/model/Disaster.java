@@ -2,6 +2,7 @@ package com.itc.catastropher.data.model;
 
 import java.io.Serializable;
 import java.sql.Timestamp;
+import java.time.Instant;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -25,14 +26,14 @@ public class Disaster implements Serializable {
 	int area;
 	long injured;
 	long deceased;
-	Timestamp time;
-	
+	Instant time;
+
 	@JsonIgnore
 	@ManyToMany(mappedBy = "disasters")
 	public Set<Helpgroup> groups = new HashSet<>();
 	
 	public Disaster() {}
-	public Disaster(int id, String type, String origin, int area, long injured, long deceased, Timestamp time) {
+	public Disaster(int id, String type, String origin, int area, long injured, long deceased, Instant time) {
 		super();
 		this.id = id;
 		this.type = type;
@@ -61,7 +62,7 @@ public class Disaster implements Serializable {
 	public long getDeceased() { return deceased; }
 	public void setDeceased(long deceased) { this.deceased = deceased; }
 	
-	public Timestamp getTime() { return time; }
-	public void setTime(Timestamp time) { this.time = time; }		
+	public Instant getTime() { return time; }
+	public void setTime(Instant time) { this.time = time; }		
 
 }

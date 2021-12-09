@@ -1,3 +1,63 @@
-<p>
-  relation-disaster-group works!
-</p>
+<ion-header>
+  <app-itc-bar></app-itc-bar>
+</ion-header>
+
+<ion-content>
+  <br><br><br><br>
+  <div>
+    <ion-grid>
+      <ion-row>
+        <ion-col></ion-col>
+        <ion-col size="11" size-md="8" size-lg="6" class="ion-text-center" id="background-soft-blue">
+          <!-- Tab links -->
+            <ion-grid>
+              <ion-row id="background-bluish">
+                <ion-col></ion-col>
+                <ion-col size="5.4" size-sm="4.4"><ion-button native Expand="block" class="tablinks" onclick="filterSection(event, 'Beginning')"><strong>Por desastre</strong></ion-button></ion-col>
+                <ion-col></ion-col>
+                <ion-col size="5.6" size-sm="4.6"><ion-button native Expand="block" class="tablinks" onclick="filterSection(event, 'Present')"><strong>Por grupo</strong></ion-button></ion-col>
+                <ion-col></ion-col>
+              </ion-row>
+            </ion-grid>
+
+          <!-- Tab content -->
+          <div id="Beginning" class="tabcontent">
+            <br>
+            <div class="horizontal-scroll">
+              <table class="table-centering">
+                <thead>
+                  <tr class="cell-header">
+                    <th></th>
+                    <th>id desastre natural</th>
+                    <th>id grupo de apoyo</th>
+                  </tr>
+                </thead>
+                <tbody *ngFor="let relation of relations">
+                  <tr class="cell-row row-hovering">
+                    <td class="cell-row-update"><ion-button native color="primary" (click)="modalUpdate(member.dni)">Editar</ion-button></td>
+                    <td>{{relation.disasterId}}</td>
+                    <td>{{member.name}}</td>
+                    <td>{{member.age}}</td>
+                    <td>{{member.date}}</td>
+                    <td>{{member.thegroup}}</td>
+                    <td class="cell-row-delete"><ion-button native color="danger" (click)="modalDelete(member.dni)">Borrar</ion-button></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <br>
+          </div>
+
+          <div id="Present" class="tabcontent">
+            <br>
+
+            <br>
+          </div>
+
+        </ion-col>
+        <ion-col></ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+  <br><br><br><br><br>
+</ion-content>

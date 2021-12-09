@@ -10,9 +10,19 @@ export class JavascriptLoaderService {
   LoadMeetUsFiles (files: string [] ){
     for (let file of files){
       let scriptObject = document.createElement("script");
-      scriptObject.src = "./assets/us-view/JavaScript/" + file + ".js";
+      scriptObject.src = "./assets/JavaScript/" + file + ".js";
       let body = document.getElementsByTagName("body")[0];
       body.appendChild(scriptObject);
     }
   }
+
+  LoadDatabaseRelationFiles (files: string [] ){
+    for (let file of files){
+      let scriptObject = document.createElement("script");
+      scriptObject.src = "./assets/JavaScript/" + file + ".js";
+      let body = document.getElementsByTagName("body")[0];
+      body.appendChild(scriptObject);
+    }
+  }
+  
 }

@@ -7,7 +7,7 @@
   <div id="container">
     <div>
       <br><br><br>
-      <ion-button native color="light" size="large">Agregar nuevo desastre</ion-button>
+      <ion-button native color="light" size="large" (click)="modalCreate()">Agregar nuevo desastre</ion-button>
     </div>
     
     <br><br>
@@ -20,6 +20,7 @@
       <thead>
         <tr class="cell-header">
           <th></th>
+          <th>id</th>
           <th>Tipo</th>
           <th>Daños</th>
           <th>Víctimas</th>
@@ -30,6 +31,7 @@
       <tbody *ngFor="let disaster of disasters">
         <tr class="cell-row row-hovering">
           <td class="cell-row-update"><ion-button native color="primary" (click)="modalUpdate(disaster.id)">Editar</ion-button></td>
+          <td>{{disaster.id}}</td>
           <td>{{disaster.type}}</td>
           <td>
             {{disaster.origin}}<br><br>
@@ -49,7 +51,3 @@
     <br><br><br><br><br>
   </div>
 </ion-content>
-
-<ion-footer>
-  <app-itc-footer></app-itc-footer>
-</ion-footer>

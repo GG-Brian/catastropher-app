@@ -17,7 +17,7 @@ const httpOptionsUsingUrlEncoded = {
 
 export class HelpgroupService {
 
-  endpoint: string = "http://localhost:8080/groups"
+  endpoint: string = "http://localhost:8080/group"
 
   constructor(private httpClient: HttpClient) { }
 
@@ -31,9 +31,9 @@ export class HelpgroupService {
 
   createGroup(newGroup: Helpgroup): Observable<Helpgroup>{
     let bodyEncoded = new URLSearchParams();
-    bodyEncoded.append("created", newGroup.created.toString());
     bodyEncoded.append("task", newGroup.task);
-    bodyEncoded.append("disaster", newGroup.disaster.toString());
+    bodyEncoded.append("place", newGroup.place)
+    bodyEncoded.append("creation", newGroup.creation.toString());
     const body = bodyEncoded.toString();
 
     console.log("creation of a new HelpGroup");
@@ -41,12 +41,13 @@ export class HelpgroupService {
     return this.httpClient.post<Helpgroup>(this.endpoint, body, httpOptionsUsingUrlEncoded);
   }
 
-  updateGroup(groupId: number, newCreation: string, newTask: string, newDisasterId: number){
+  updateGroup(groupId: number, newTask: string, newPlace: string, newCreation: string){
     let bodyEncoded = new URLSearchParams();
     bodyEncoded.append("id", groupId.toString());
-    bodyEncoded.append("created", newCreation);
     bodyEncoded.append("task", newTask);
-    bodyEncoded.append("disaster", newDisasterId.toString());
+    bodyEncoded.append("place", newPlace);
+    bodyEncoded.append("creation", newCreation);
+
     const body = bodyEncoded.toString();
 
     console.log("updation of the HelpGroup; " + body);

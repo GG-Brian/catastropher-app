@@ -7,8 +7,14 @@ const httpOption = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' })
 };
 
+// This gives error 'Observable<ArrayBuffer not assignable to Observable<Supporter>'
+// const httpOptionsUsingUrlEncoded = {
+//   Headers: new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' })
+// };
+
+// However, this doesn't, and I cannot see the difference (taking me about 2 days of work)
 const httpOptionsUsingUrlEncoded = {
-  Headers: new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' })
+  headers: new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' })
 };
 
 @Injectable({
@@ -17,7 +23,7 @@ const httpOptionsUsingUrlEncoded = {
 
 export class SupporterService {
 
-  endpoint: string = "http://localhost:8080/supporters"
+  endpoint: string = "http://localhost:8080/supporter"
 
   constructor(private httpClient: HttpClient) { }
 
@@ -25,7 +31,7 @@ export class SupporterService {
     return this.httpClient.get<Supporter[]>(this.endpoint);
   }
 
-  getSupportersById(dni: string): Observable<Supporter>{
+  getSupporterById(dni: string): Observable<Supporter>{
     return this.httpClient.get<Supporter>(this.endpoint + "/" + dni);
   }
 
@@ -34,30 +40,26 @@ export class SupporterService {
     bodyEncoded.append("dni", newSupporter.dni);
     bodyEncoded.append("name", newSupporter.name);
     bodyEncoded.append("age", newSupporter.age.toString());
-    bodyEncoded.append("salary", newSupporter.salary.toString());
-    bodyEncoded.append("since", newSupporter.since);
-    bodyEncoded.append("groupId", newSupporter.groupId.toString());
+    bodyEncoded.append("date", newSupporter.date);
+    if (newSupporter.thegroup == null) { bodyEncoded.append("thegroup", "") } else { bodyEncoded.append("thegroup", newSupporter.thegroup.toString()); }
     const body = bodyEncoded.toString();
 
     console.log("creation of a new Supporter");
     console.log(JSON.stringify(newSupporter));
-    return null;
-    //return this.httpClient.post<Supporter>(this.endpoint, body, httpOptionsUsingUrlEncoded);
+    return this.httpClient.post<Supporter>(this.endpoint, body, httpOptionsUsingUrlEncoded);
   }
 
-  updateSupporter(SupporterDni: string, newName: string, newAge: number, newSalary: number, newSince: string, newGroupId: number){
+  updateSupporter(SupporterDni: string, newName: string, newAge: number, newDate: string, newThegroup: number){
     let bodyEncoded = new URLSearchParams();
     bodyEncoded.append("dni", SupporterDni);
     bodyEncoded.append("name", newName);
     bodyEncoded.append("age", newAge.toString());
-    bodyEncoded.append("salary", newSalary.toString());
-    bodyEncoded.append("since", newSince);
-    bodyEncoded.append("groupId", newGroupId.toString());
+    bodyEncoded.append("date", newDate);
+    if (newThegroup == null) { bodyEncoded.append("thegroup", "") } else { bodyEncoded.append("thegroup", newThegroup.toString()); }
     const body = bodyEncoded.toString();
 
     console.log("updating of the Supporter; " + body);
-    return null;
-    //return this.httpClient.put<Supporter>(this.endpoint + "/" + SupporterDni, body, httpOptionsUsingUrlEncoded);
+    return this.httpClient.put<Supporter>(this.endpoint + "/" + SupporterDni, body, httpOptionsUsingUrlEncoded);
   }
 
   deleteSupporter(SupporterDni: string): Observable<Supporter>{

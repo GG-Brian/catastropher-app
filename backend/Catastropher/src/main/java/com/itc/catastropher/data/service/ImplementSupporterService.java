@@ -17,6 +17,9 @@ public class ImplementSupporterService implements ISupporterService {
 	@Override
 	public List<Supporter> getAll() {
 		return (List<Supporter>) supporterDao.findAll();
+		//for (Supporter supporter: data) {
+		//	supporter.getThegroup().getId();
+		//}
 	}
 
 	@Override

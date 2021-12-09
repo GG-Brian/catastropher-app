@@ -1,0 +1,63 @@
+<ion-header>
+  <div class="color-delete">
+    <br>
+    <ion-title class="ion-text-center modal-title">
+      <ion-text color="light">Eliminar miembro</ion-text>
+    </ion-title>
+    <br>
+  </div>
+</ion-header>
+
+<ion-content class="ion-text-center">
+  <ion-grid>
+    <ion-row>
+      <ion-col class="container-delete">
+        <br>
+        <h1>¿Está seguro de querer eliminar este registro?</h1>
+        <h3>Está acción no es reversible</h3>
+        <br><br>
+        <div *ngIf="myMember" class="horizontal-scroll">
+          <table class="table-centering">
+            <thead>
+              <tr class="cell-header">
+                <th>dni</th>
+                <th>Nombre</th>
+                <th>Edad</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="cell-row">
+                <td>{{myMember.dni}}</td>
+                <td>{{myMember.name}}</td>
+                <td>{{myMember.age}}</td>
+              </tr>
+            </tbody>
+          </table>
+          <br>
+          <table class="table-centering">
+            <thead>
+              <tr class="cell-header">
+                <th>Inscripción</th>
+                <th>Grupo</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="cell-row">
+                <td>{{myMember.date}}</td>
+                <td>{{myMember.thegroup}}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <br><br>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
+
+<ion-footer class="ion-text-center">
+  <ion-row>
+    <ion-col size="6" id="container-confirm"><ion-button native color="primary" (click)="recordDelete(myMember.dni)">Confirmar</ion-button></ion-col>
+    <ion-col size="6" id="container-cancel"><ion-button native color="danger" (click)="closeModel()">Cancelar</ion-button></ion-col>
+  </ion-row>
+</ion-footer>

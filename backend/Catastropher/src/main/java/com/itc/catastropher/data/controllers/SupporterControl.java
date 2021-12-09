@@ -25,12 +25,12 @@ public class SupporterControl {
 	
 	@Autowired ISupporterService supporterService;
 
-	@GetMapping("/supporters")
+	@GetMapping("/supporter")
 	List<Supporter> getAll(){
 		return supporterService.getAll();
 	}
 	
-	@GetMapping("/supporters/{dni}")
+	@GetMapping("/supporter/{dni}")
 	Supporter getOne(@PathVariable("dni") String dni) {
 		Optional<Supporter> supporterData = supporterService.getOne(dni);
 		
@@ -41,13 +41,13 @@ public class SupporterControl {
 		return null;
 	}
 	
-	@PostMapping("/supporters")
+	@PostMapping("/supporter")
 	void add(Supporter newSupporter) {
 		System.out.println(newSupporter.getName());
 		supporterService.add(newSupporter);
 	}
 	
-	@PostMapping(value="/supporters", consumes="application/json")
+	@PostMapping(value="/supporter", consumes="application/json")
 	void addWithJson(@RequestBody String supporterData) {
 		ObjectMapper mapeadorDatos = new ObjectMapper();
 		try {
@@ -57,13 +57,13 @@ public class SupporterControl {
 		} catch (JsonProcessingException processingError) { processingError.printStackTrace(); }
 	}
 	
-	@PutMapping("/supporters/{dni}")
+	@PutMapping("/supporter/{dni}")
 	void update(@PathVariable("dni") String dni, Supporter changedSupporter) {
 		System.out.println();
 		supporterService.update(dni, changedSupporter);
 	}
 	
-	@DeleteMapping("/supporters/{dni}")
+	@DeleteMapping("/supporter/{dni}")
 	void delete(@PathVariable("dni") String dni) {
 		System.out.println();
 		supporterService.delete(dni);

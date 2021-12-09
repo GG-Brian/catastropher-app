@@ -1,3 +1,44 @@
-<p>
-  helpgroup works!
-</p>
+<ion-header>
+  <app-itc-bar></app-itc-bar>
+</ion-header>
+
+<ion-content>
+
+  <div id="container">
+    <div>
+      <br><br><br>
+      <ion-button native color="light" size="large" (click)="modalCreate()">Agregar nuevo grupo</ion-button>
+    </div>
+    <br><br>
+
+    <h1 class="text-dark-gray">Grupo recogidos por Catastropher</h1>
+    <br>
+
+    <div class="horizontal-scroll">
+    <table class="table-centering">
+      <thead>
+        <tr class="cell-header">
+          <th></th>
+          <th>id</th>
+          <th>Tarea</th>
+          <th>Ubicación</th>
+          <th>Creación</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody *ngFor="let group of groups">
+        <tr class="cell-row row-hovering">
+          <td class="cell-row-update"><ion-button native color="primary" (click)="modalUpdate(group.id)">Editar</ion-button></td>
+          <td>{{group.id}}</td>
+          <td>{{group.task}}</td>
+          <td>{{group.place}}</td>
+          <td>{{group.creation}}</td>
+          <td class="cell-row-delete"><ion-button native color="danger" (click)="modalDelete(group.id)">Borrar</ion-button></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <br><br><br><br><br>
+  </div>
+</ion-content>

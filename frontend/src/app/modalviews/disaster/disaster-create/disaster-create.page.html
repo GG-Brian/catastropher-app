@@ -1,0 +1,70 @@
+<ion-header>
+  <div class="color-create">
+    <br>
+    <ion-title class="ion-text-center modal-title">Crear desastre natural</ion-title>
+    <br>
+  </div>
+</ion-header>
+
+<ion-content>
+  <br><br><br>
+  <table class="table-centering">
+    <thead>
+      <tr class="cell-header">
+        <th>Tipo</th>
+        <th>Daños</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="cell-row">
+        <td>
+          <ion-item>
+            <ion-input type="text" required [(ngModel)]="type" placeholder="Desastre"></ion-input>
+          </ion-item>
+        </td>
+        <td>
+          <ion-item>
+            <ion-input type="text" required [(ngModel)]="origin" placeholder="Ubicación"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-input type="number" required [(ngModel)]="area" placeholder="Área destruida"></ion-input>
+          </ion-item>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <br><br><br>
+  <table class="table-centering">
+    <thead>
+      <tr class="cell-header">
+        <th>Víctimas</th>
+        <th>Fecha y hora</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="cell-row">
+        <td>
+          <ion-item>
+            <ion-input type="number" required [(ngModel)]="injured" placeholder="Heridos"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-input type="number" required [(ngModel)]="deceased" placeholder="Fallecidos"></ion-input>
+          </ion-item>
+        </td>
+        <td>
+          <ion-item>
+            <ion-datetime [(ngModel)]="time" displayFormat="YYYY-MM-DD HH:mm:ss"></ion-datetime>
+          </ion-item>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <br><br><br>
+</ion-content>
+
+<ion-footer class="ion-text-center">
+  <ion-row>
+    <ion-col size="6" id="container-confirm"><ion-button native color="primary" (click)="recordCreate(type, origin, area, injured, deceased, time)">Crear</ion-button></ion-col>
+    <ion-col size="6" id="container-cancel"><ion-button native color="danger" (click)="closeModel()">Cancelar</ion-button></ion-col>
+  </ion-row>
+</ion-footer>

@@ -1,0 +1,40 @@
+#container {
+    text-align: center;
+  
+    left: 0;
+    right: 0;
+}
+
+
+
+
+.text-dark-gray { color: rgb(88, 88, 88); }
+
+.horizontal-scroll { overflow-x: auto; }
+.table-centering { margin: auto; }
+
+.cell-header th {
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  
+  border: 1px solid rgb(222, 222, 222);
+  background-color: rgb(50, 122, 204);
+  color: rgb(222,222,222);
+}
+
+.cell-row-update { background-color: rgb(184, 217, 255) !important; }
+.cell-row-delete { background-color: rgb(235, 148, 148) !important; }
+.row-hovering:hover td { background-color: rgb(215, 215, 215) !important; }
+.row-hovering:hover td.cell-row-update { background-color: rgb(163, 197, 233) !important; }
+.row-hovering:hover td.cell-row-delete { background-color: rgb(219, 136, 136) !important; }
+.cell-row td {
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+  
+    border: 1px solid rgb(66, 66, 66);
+    background-color: rgb(232, 232, 232);
+}

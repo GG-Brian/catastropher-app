@@ -1,3 +1,46 @@
-<p>
-  supporter works!
-</p>
+<ion-header>
+  <app-itc-bar></app-itc-bar>
+</ion-header>
+
+<ion-content>
+
+  <div id="container">
+    <div>
+      <br><br><br>
+      <ion-button native color="light" size="large" (click)="modalCreate()">Agregar nuevo miembro</ion-button>
+    </div>
+    <br><br>
+
+    <h1 class="text-dark-gray">Miembros recogidos por Catastropher</h1>
+    <br>
+
+    <div class="horizontal-scroll">
+    <table class="table-centering">
+      <thead>
+        <tr class="cell-header">
+          <th></th>
+          <th>dni</th>
+          <th>Nombre</th>
+          <th>Edad</th>
+          <th>Inscripción</th>
+          <th>Grupo</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody *ngFor="let member of members">
+        <tr class="cell-row row-hovering">
+          <td class="cell-row-update"><ion-button native color="primary" (click)="modalUpdate(member.dni)">Editar</ion-button></td>
+          <td>{{member.dni}}</td>
+          <td>{{member.name}}</td>
+          <td>{{member.age}}</td>
+          <td>{{member.date}}</td>
+          <td>{{member.thegroup}}</td>
+          <td class="cell-row-delete"><ion-button native color="danger" (click)="modalDelete(member.dni)">Borrar</ion-button></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <br><br><br><br><br>
+  </div>
+</ion-content>

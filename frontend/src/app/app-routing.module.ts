@@ -27,10 +27,29 @@ const routes: Routes = [
 
   { path: '', redirectTo: "/home", pathMatch: 'full'},
   { path: '**', redirectTo: "/home", pathMatch: 'full'},
-  {
-    path: 'update-modal',
-    loadChildren: () => import('./modalviews/update-modal/update-modal.module').then( m => m.UpdateModalPageModule)
-  },
+  
+  { path: 'disaster-create', loadChildren: () => import('./modalviews/disaster/disaster-create/disaster-create.module').then( m => m.DisasterCreatePageModule)},
+  { path: 'disaster-update', loadChildren: () => import('./modalviews/disaster/disaster-update/disaster-update.module').then( m => m.DisasterUpdatePageModule)},
+  { path: 'disaster-delete', loadChildren: () => import('./modalviews/disaster/disaster-delete/disaster-delete.module').then( m => m.DisasterDeletePageModule)},
+  { path: 'disaster-create-confirm', loadChildren: () => import('./modalviews/disaster/disaster-create-confirm/disaster-create-confirm.module').then( m => m.DisasterCreateConfirmPageModule)},
+  { path: 'disaster-update-confirm', loadChildren: () => import('./modalviews/disaster/disaster-update-confirm/disaster-update-confirm.module').then( m => m.DisasterUpdateConfirmPageModule)},
+  { path: 'disaster-delete-confirm', loadChildren: () => import('./modalviews/disaster/disaster-delete-confirm/disaster-delete-confirm.module').then( m => m.DisasterDeleteConfirmPageModule)},
+  
+  { path: 'group-create', loadChildren: () => import('./modalviews/group/group-create/group-create.module').then( m => m.GroupCreatePageModule)},
+  { path: 'group-update', loadChildren: () => import('./modalviews/group/group-update/group-update.module').then( m => m.GroupUpdatePageModule)},
+  { path: 'group-delete', loadChildren: () => import('./modalviews/group/group-delete/group-delete.module').then( m => m.GroupDeletePageModule)},
+  { path: 'group-create-confirm', loadChildren: () => import('./modalviews/group/group-create-confirm/group-create-confirm.module').then( m => m.GroupCreateConfirmPageModule)},
+  { path: 'group-update-confirm', loadChildren: () => import('./modalviews/group/group-update-confirm/group-update-confirm.module').then( m => m.GroupUpdateConfirmPageModule)},
+  { path: 'group-delete-confirm', loadChildren: () => import('./modalviews/group/group-delete-confirm/group-delete-confirm.module').then( m => m.GroupDeleteConfirmPageModule)},
+  
+  { path: 'supporter-create', loadChildren: () => import('./modalviews/supporter/supporter-create/supporter-create.module').then( m => m.SupporterCreatePageModule)},
+  { path: 'supporter-update', loadChildren: () => import('./modalviews/supporter/supporter-update/supporter-update.module').then( m => m.SupporterUpdatePageModule)},
+  { path: 'supporter-delete', loadChildren: () => import('./modalviews/supporter/supporter-delete/supporter-delete.module').then( m => m.SupporterDeletePageModule)},
+  { path: 'supporter-create-confirm', loadChildren: () => import('./modalviews/supporter/supporter-create-confirm/supporter-create-confirm.module').then( m => m.SupporterCreateConfirmPageModule)},
+  { path: 'supporter-update-confirm', loadChildren: () => import('./modalviews/supporter/supporter-update-confirm/supporter-update-confirm.module').then( m => m.SupporterUpdateConfirmPageModule)},
+  { path: 'supporter-delete-confirm', loadChildren: () => import('./modalviews/supporter/supporter-delete-confirm/supporter-delete-confirm.module').then( m => m.SupporterDeleteConfirmPageModule)},
+
+
 ];
 
 @NgModule({

@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ModalController } from '@ionic/angular';
-import { UpdateModalPage } from 'src/app/modalviews/update-modal/update-modal.page';
+import { DisasterCreatePage } from 'src/app/modalviews/disaster/disaster-create/disaster-create.page';
+import { DisasterDeletePage } from 'src/app/modalviews/disaster/disaster-delete/disaster-delete.page';
+import { DisasterUpdatePage } from 'src/app/modalviews/disaster/disaster-update/disaster-update.page';
 import { DisasterService } from 'src/app/services/disaster.service';
 import { Disaster } from '../../models/disaster'
 
@@ -26,24 +28,57 @@ export class DisasterComponent implements OnInit {
     })
   }
 
-  async modalUpdate(id: number) {
 
-    this.disasterId = id;
-    localStorage.setItem("disasterId", `${this.disasterId}`)
+  
 
-    const modal = await this.modalController.create({
-      component: UpdateModalPage,
+  async modalCreate() {
 
-    });
+    const modalCreate = await this.modalController.create({ component: DisasterCreatePage, });
 
-    modal.onDidDismiss().then((modelData) => {
+    modalCreate.onDidDismiss().then((modelData) => {
       if (modelData !== null) {
         this.modelData = modelData.data;
         window.location.reload();
       }
     });
+    return await modalCreate.present();
+  }
 
-    return await modal.present();
+
+
+
+  async modalUpdate(id: number) {
+
+    this.disasterId = id;
+    localStorage.setItem("disasterId", `${this.disasterId}`);
+
+    const modalUpdate = await this.modalController.create({ component: DisasterUpdatePage, });
+
+    modalUpdate.onDidDismiss().then((modelData) => {
+      if (modelData !== null) {
+        this.modelData = modelData.data;
+        window.location.reload();
+      }
+    });
+    return await modalUpdate.present();
+  }
+
+
+
+
+  async modalDelete(id: number) {
+    this.disasterId = id;
+    localStorage.setItem("disasterId", `${this.disasterId}`);
+
+    const modalDelete = await this.modalController.create({ component: DisasterDeletePage, });
+
+    modalDelete.onDidDismiss().then((modelData) => {
+      if (modelData != null){
+        this.modelData = modelData.data;
+        window.location.reload();
+      }
+    })
+    return await modalDelete.present();
   }
 
 }

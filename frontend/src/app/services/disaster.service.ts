@@ -27,7 +27,6 @@ export class DisasterService {
 
   createDisaster(newDisaster: Disaster): Observable<Disaster>{
     let bodyEncoded = new URLSearchParams();
-    bodyEncoded.append("name", newDisaster.name);
     bodyEncoded.append("type", newDisaster.type);
     bodyEncoded.append("origin", newDisaster.origin);
     bodyEncoded.append("area", newDisaster.area.toString());
@@ -41,10 +40,9 @@ export class DisasterService {
     return this.httpClient.post<Disaster>(this.endpoint, body, httpOptionsUsingUrlEncoded);
   }
 
-  updateDisaster(disasterId: number, newName: string, newType: string, newOrigin: string, newArea: number, newInjured: number, newDeceased: number, newTime: string){
+  updateDisaster(disasterId: number, newType: string, newOrigin: string, newArea: number, newInjured: number, newDeceased: number, newTime: string){
     let bodyEncoded = new URLSearchParams();
     bodyEncoded.append("id", disasterId.toString());
-    bodyEncoded.append("name", newName);
     bodyEncoded.append("type", newType);
     bodyEncoded.append("origin", newOrigin);
     bodyEncoded.append("area", newArea.toString());

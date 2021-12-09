@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { JavascriptLoaderService } from 'src/app/services/javascript-loader.service';
 
 @Component({
   selector: 'app-relation-disaster-group',
@@ -7,8 +8,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RelationDisasterGroupComponent implements OnInit {
 
-  constructor() { }
+  constructor( private javascriptFile: JavascriptLoaderService) {
+    this.javascriptFile.LoadMeetUsFiles(["relation-tabs"])
+  }
 
-  ngOnInit() {}
+  ngOnInit(): void {}
 
 }

@@ -9,7 +9,7 @@ import { JavascriptLoaderService } from 'src/app/services/javascript-loader.serv
 export class MeetUsComponent implements OnInit {
 
   constructor( private javascriptFile: JavascriptLoaderService) {
-    this.javascriptFile.LoadMeetUsFiles(["document-carousel"])
+    this.javascriptFile.LoadMeetUsFiles(["meet-us-carousel"])
   }
 
   ngOnInit(): void {}

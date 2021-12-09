@@ -1,0 +1,82 @@
+<ion-header>
+  <div class="color-update">
+    <br>
+    <ion-title class="ion-text-center modal-title">
+      <ion-text color="light">Modificar grupo</ion-text>
+    </ion-title>
+    <br>
+  </div>
+</ion-header>
+
+<ion-content class="ion-text-center">
+  <br>
+  <h1>Vista previa</h1>
+  <div *ngIf="myGroup" class="horizontal-scroll">
+    <table class="table-centering">
+      <thead>
+        <tr class="cell-header">
+          <th>id</th>
+          <th>Tarea</th>
+          <th>Ubicación</th>
+          <th>Creación</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-model="myGroup" class="cell-row">
+          <td>{{myGroup.id}}</td>
+          <td>{{myGroup.task}}</td>
+          <td>{{myGroup.place}}</td>
+          <td>{{myGroup.creation}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <br><br>
+
+  <div id="record-editor-background">
+    <br><br>
+    <div *ngIf="myGroup" class="horizontal-scroll">
+      <table class="table-centering">
+        <thead>
+          <tr class="cell-header">
+            <th>Tarea</th>
+            <th>Ubicación</th>
+            <th>Creación</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="cell-row">
+            <td>
+              <ion-item>
+                <ion-select [(ngModel)]="myGroup.task" placeholder="Propósito">
+                  <ion-select-option value="Evacuation">Evacuación</ion-select-option>
+                  <ion-select-option value="Rescue">Rescate</ion-select-option>
+                  <ion-select-option value="Supplies">Abastecimiento</ion-select-option>
+                  <ion-select-option value="Multitask">Multitarea</ion-select-option>
+                </ion-select>
+              </ion-item>
+            </td>
+            <td>
+              <ion-item>
+                <ion-input type="text" required [(ngModel)]="myGroup.place"></ion-input>
+              </ion-item>
+            </td>
+            <td>
+              <ion-item>
+                <ion-datetime [(ngModel)]="myGroup.creation" displayFormat="YYYY-MM-DD"></ion-datetime>
+              </ion-item>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <br><br><br>
+  </div>
+</ion-content>
+
+<ion-footer class="ion-text-center">
+  <ion-row>
+    <ion-col size="6" id="container-confirm"><ion-button native color="primary" (click)="recordUpdate(myGroup.id, myGroup.task, myGroup.place, myGroup.creation)">Confirmar</ion-button></ion-col>
+    <ion-col size="6" id="container-cancel"><ion-button native color="danger" (click)="closeModel()">Cancelar</ion-button></ion-col>
+  </ion-row>
+</ion-footer>

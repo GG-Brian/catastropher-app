@@ -29,11 +29,11 @@ public class HelpgroupControl {
 	@Autowired IHelpgroupService groupService;
 	@Autowired IDisasterService disasterService;
 	
-	@GetMapping("/groups")
+	@GetMapping("/group")
 	List<Helpgroup> getAll(){
 		return groupService.getAll(); }
 	
-	@GetMapping("/groups/{id}")
+	@GetMapping("/group/{id}")
 	Helpgroup getOne(@PathVariable("id") long id) {
 		Optional<Helpgroup> theGroup = groupService.getOne(id);
 		
@@ -44,13 +44,13 @@ public class HelpgroupControl {
 		return null;
 	}
 	
-	@PostMapping(value="/groups")
+	@PostMapping(value="/group")
 	void add(Helpgroup newGroup) {
 		System.out.println(newGroup.getTask());
 		groupService.add(newGroup);
 	}
 	
-	@PostMapping(value="/groups", consumes="application/json")
+	@PostMapping(value="/group", consumes="application/json")
 	void addWithJson(@RequestBody String groupData) {
 		ObjectMapper mapeadorDatos = new ObjectMapper();
 		try {
@@ -60,13 +60,13 @@ public class HelpgroupControl {
 		} catch (JsonProcessingException processingError) { processingError.printStackTrace(); }
 	}
 
-	@PutMapping("/groups/{id}")
+	@PutMapping("/group/{id}")
 	void update(@PathVariable("id") int id, Helpgroup changedGroup) {
 		System.out.println();
 		groupService.update(id, changedGroup);
 	}
 	
-	@DeleteMapping("/groups/{id}")
+	@DeleteMapping("/group/{id}")
 	void delete(@PathVariable("id") int id) {
 		System.out.println();
 		groupService.delete(id);
