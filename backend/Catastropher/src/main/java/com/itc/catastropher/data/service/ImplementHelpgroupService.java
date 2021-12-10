@@ -12,12 +12,14 @@ import com.itc.catastropher.data.dao.IHelpsDao;
 import com.itc.catastropher.data.model.Disaster;
 import com.itc.catastropher.data.model.Helpgroup;
 import com.itc.catastropher.data.model.Helps;
+import com.itc.catastropher.data.model.HelpsPrimaryKeys;
 
 @Service
 public class ImplementHelpgroupService implements IHelpgroupService {
 
 	@Autowired IHelpgroupDao groupDao;
 	@Autowired IHelpsDao relationDao;
+	@Autowired ImplementDisasterService disasterService;
 	
 	@Override
 	public List<Helpgroup> getAll() {
@@ -63,9 +65,17 @@ public class ImplementHelpgroupService implements IHelpgroupService {
 	}
 
 	@Override
-	public List<Helps> getAllRelations() {
-		return (List<Helps>) relationDao.findAll();
+	public List<Helps> getAllRelations(boolean order) {
+		if (order) { return (List<Helps>) relationDao.findAllByOrderByGroupAsc(); }
+		else { 		 return (List<Helps>) relationDao.findAll(); }
 	}
-
+	
+	@Override
+	public Optional<Helps> getOneRelation(long disasterId, long groupId) {
+		Disaster disaster = disasterService.getOne(disasterId).get();
+		Helpgroup group = this.getOne(groupId).get();
+		
+		return relationDao.findByDisasterAndGroup(disaster, group);
+	}
 
 }

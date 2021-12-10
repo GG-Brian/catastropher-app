@@ -30,7 +30,7 @@ public class HelpgroupControl {
 	@Autowired IDisasterService disasterService;
 	
 	@GetMapping("/group")
-	List<Helpgroup> getAll(){
+	List<Helpgroup> getAll(boolean order){
 		return groupService.getAll(); }
 	
 	@GetMapping("/group/{id}")
@@ -75,12 +75,24 @@ public class HelpgroupControl {
 	
 	
 	
-	@GetMapping("/disasters/groups")
-	List<Helps> getAllRelations(){
-		return groupService.getAllRelations(); }
+	@GetMapping("/disasters/groups/{order}")
+	List<Helps> getAllRelations(@PathVariable("order") boolean order){
+		return groupService.getAllRelations(order); }
+	
+	@GetMapping("/disasters/groups/{disasterId}/{groupId}")
+	Helps getOneRelation(@PathVariable("disasterId") long disasterId, @PathVariable("groupId") long groupId) {
+		Optional<Helps> theRelation = groupService.getOneRelation(disasterId, groupId);
+		
+		if(theRelation.isPresent()) {
+			return theRelation.get();
+		}
+		
+		return null;
+	}
+	
 	
 	@PostMapping("/disasters/groups/{disasterId}/{groupId}")
-	void addRelation(@PathVariable("disasterId") int disasterId, @PathVariable("groupId") int groupId) {
+	void addRelation(@PathVariable("disasterId") long disasterId, @PathVariable("groupId") long groupId) {
 		Optional<Disaster> relateDisaster = disasterService.getOne(disasterId);
 		Optional<Helpgroup> relateGroup = groupService.getOne(groupId);
 		
@@ -90,7 +102,7 @@ public class HelpgroupControl {
 	}
 	
 	@DeleteMapping("/disasters/groups/{disasterId}/{groupId}")
-	void removeRelation(@PathVariable("disasterId") int disasterId, @PathVariable("groupId") int groupId) {
+	void removeRelation(@PathVariable("disasterId") long disasterId, @PathVariable("groupId") long groupId) {
 		Optional<Disaster> relateDisaster = disasterService.getOne(disasterId);
 		Optional<Helpgroup> relateGroup = groupService.getOne(groupId);
 

@@ -44,7 +44,9 @@
             <tbody>
               <tr class="cell-row">
                 <td>{{myMember.date}}</td>
-                <td>{{myMember.thegroup}}</td>
+                <div *ngIf="!myMember.thegroup; then isnull; else notnull"></div>
+                <ng-template #isnull><td></td></ng-template>
+                <ng-template #notnull><td>{{myMember.thegroup.id}}</td></ng-template>
               </tr>
             </tbody>
           </table>

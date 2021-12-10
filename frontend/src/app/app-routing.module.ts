@@ -48,9 +48,14 @@ const routes: Routes = [
   { path: 'supporter-create-confirm', loadChildren: () => import('./modalviews/supporter/supporter-create-confirm/supporter-create-confirm.module').then( m => m.SupporterCreateConfirmPageModule)},
   { path: 'supporter-update-confirm', loadChildren: () => import('./modalviews/supporter/supporter-update-confirm/supporter-update-confirm.module').then( m => m.SupporterUpdateConfirmPageModule)},
   { path: 'supporter-delete-confirm', loadChildren: () => import('./modalviews/supporter/supporter-delete-confirm/supporter-delete-confirm.module').then( m => m.SupporterDeleteConfirmPageModule)},
-
-
-];
+  
+  { path: 'relation-create', loadChildren: () => import('./modalviews/relation/relation-create/relation-create.module').then( m => m.RelationCreatePageModule)},
+  { path: 'relation-update', loadChildren: () => import('./modalviews/relation/relation-update/relation-update.module').then( m => m.RelationUpdatePageModule)},
+  { path: 'relation-delete', loadChildren: () => import('./modalviews/relation/relation-delete/relation-delete.module').then( m => m.RelationDeletePageModule)},
+  { path: 'relation-create-confirm', loadChildren: () => import('./modalviews/relation/relation-create-confirm/relation-create-confirm.module').then( m => m.RelationCreateConfirmPageModule)},
+  { path: 'relation-update-confirm', loadChildren: () => import('./modalviews/relation/relation-update-confirm/relation-update-confirm.module').then( m => m.RelationUpdateConfirmPageModule)},
+  { path: 'relation-delete-confirm', loadChildren: () => import('./modalviews/relation/relation-delete-confirm/relation-delete-confirm.module').then( m => m.RelationDeleteConfirmPageModule)},
+  ];
 
 @NgModule({
   imports: [

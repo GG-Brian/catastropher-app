@@ -34,7 +34,9 @@
           <td>{{member.name}}</td>
           <td>{{member.age}}</td>
           <td>{{member.date}}</td>
-          <td>{{member.thegroup}}</td>
+            <div *ngIf="!member.thegroup; then isnull; else notnull"></div>
+            <ng-template #isnull><td></td></ng-template>
+            <ng-template #notnull><td>{{member.thegroup.id}}</td></ng-template>
           <td class="cell-row-delete"><ion-button native color="danger" (click)="modalDelete(member.dni)">Borrar</ion-button></td>
         </tr>
       </tbody>

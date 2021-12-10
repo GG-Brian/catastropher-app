@@ -32,7 +32,7 @@ export class HelpgroupService {
   createGroup(newGroup: Helpgroup): Observable<Helpgroup>{
     let bodyEncoded = new URLSearchParams();
     bodyEncoded.append("task", newGroup.task);
-    bodyEncoded.append("place", newGroup.place)
+    bodyEncoded.append("place", newGroup.place);
     bodyEncoded.append("creation", newGroup.creation.toString());
     const body = bodyEncoded.toString();
 

@@ -29,7 +29,7 @@ export class SupporterComponent implements OnInit {
       //   this.helpgroupService.getGroupById( thisSupporter .thegroup.)
       // });
       this.members = allSupporters;
-      console.log(allSupporters)
+      console.log(allSupporters);
     })
   }
 

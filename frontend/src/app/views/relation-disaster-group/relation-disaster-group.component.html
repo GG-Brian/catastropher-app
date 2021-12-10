@@ -4,54 +4,75 @@
 
 <ion-content>
   <br><br><br><br>
-  <div>
+  <div class="ion-text-center">
+    <div>
+      <ion-button native color="light" size="large" (click)="modalCreate()">Agregar nuevo vínculo</ion-button>
+    </div>
+    <br><br>
     <ion-grid>
       <ion-row>
         <ion-col></ion-col>
-        <ion-col size="11" size-md="8" size-lg="6" class="ion-text-center" id="background-soft-blue">
+        <ion-col size="11" size-md="8" size-lg="6" id="background-soft-blue">
           <!-- Tab links -->
             <ion-grid>
               <ion-row id="background-bluish">
                 <ion-col></ion-col>
-                <ion-col size="5.4" size-sm="4.4"><ion-button native Expand="block" class="tablinks" onclick="filterSection(event, 'Beginning')"><strong>Por desastre</strong></ion-button></ion-col>
+                <ion-col size="5.4" size-sm="4.4"><ion-button native Expand="block" class="tablinks active" onclick="filterSection(event, 'disastersFirst')"><strong>Por desastre</strong></ion-button></ion-col>
                 <ion-col></ion-col>
-                <ion-col size="5.6" size-sm="4.6"><ion-button native Expand="block" class="tablinks" onclick="filterSection(event, 'Present')"><strong>Por grupo</strong></ion-button></ion-col>
+                <ion-col size="5.6" size-sm="4.6"><ion-button native Expand="block" class="tablinks" onclick="filterSection(event, 'groupsFirst')"><strong>Por grupo</strong></ion-button></ion-col>
                 <ion-col></ion-col>
               </ion-row>
             </ion-grid>
 
           <!-- Tab content -->
-          <div id="Beginning" class="tabcontent">
+          <div id="disastersFirst" class="tabcontent">
             <br>
             <div class="horizontal-scroll">
               <table class="table-centering">
                 <thead>
                   <tr class="cell-header">
                     <th></th>
-                    <th>id desastre natural</th>
-                    <th>id grupo de apoyo</th>
+                    <th>Desastre natural</th>
+                    <th>Grupo de apoyo</th>
+                    <th></th>
                   </tr>
                 </thead>
                 <tbody *ngFor="let relation of relations">
                   <tr class="cell-row row-hovering">
-                    <td class="cell-row-update"><ion-button native color="primary" (click)="modalUpdate(member.dni)">Editar</ion-button></td>
-                    <td>{{relation.disasterId}}</td>
-                    <td>{{member.name}}</td>
-                    <td>{{member.age}}</td>
-                    <td>{{member.date}}</td>
-                    <td>{{member.thegroup}}</td>
-                    <td class="cell-row-delete"><ion-button native color="danger" (click)="modalDelete(member.dni)">Borrar</ion-button></td>
+                    <td class="cell-row-update"><ion-button native size="small" color="primary" (click)="modalUpdate(relation.relation.disasterId, relation.relation.hgroupId)">Editar</ion-button></td>
+                    <td>{{relation.relation.disasterId}}</td>
+                    <td>{{relation.relation.hgroupId}}</td>
+                    <td class="cell-row-delete"><ion-button native size="small" color="danger" (click)="modalDelete(relation.relation.disasterId, relation.relation.hgroupId)">Borrar</ion-button></td>
                   </tr>
                 </tbody>
               </table>
             </div>
-            <br>
+            <br><br>
           </div>
 
-          <div id="Present" class="tabcontent">
+          <div id="groupsFirst" class="tabcontent">
             <br>
-
-            <br>
+            <div class="horizontal-scroll">
+              <table class="table-centering">
+                <thead>
+                  <tr class="cell-header">
+                    <th></th>
+                    <th>Grupo de apoyo</th>
+                    <th>Desastre natural</th>
+                    <th></th>
+                  </tr>
+                </thead>
+                <tbody *ngFor="let relation of relationsGroup">
+                  <tr class="cell-row row-hovering">
+                    <td class="cell-row-update"><ion-button native size="small" color="primary" (click)="modalUpdate(relation.relation.disasterId, relation.relation.hgroupId)">Editar</ion-button></td>
+                    <td>{{relation.relation.disasterId}}</td>
+                    <td>{{relation.relation.hgroupId}}</td>
+                    <td class="cell-row-delete"><ion-button native size="small" color="danger" (click)="modalDelete(relation.relation.disasterId, relation.relation.hgroupId)">Borrar</ion-button></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <br><br>
           </div>
 
         </ion-col>
