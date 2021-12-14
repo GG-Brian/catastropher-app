@@ -9,44 +9,52 @@
       <br><br><br>
       <ion-button native color="light" size="large" (click)="modalCreate()">Agregar nuevo desastre</ion-button>
     </div>
-    
     <br><br>
 
-    <h1 class="text-dark-gray">Desastres naturales recogidos por Catastropher</h1>
-    <br>
-
-    <div class="horizontal-scroll">
-    <table class="table-centering">
-      <thead>
-        <tr class="cell-header">
-          <th></th>
-          <th>id</th>
-          <th>Tipo</th>
-          <th>Daños</th>
-          <th>Víctimas</th>
-          <th>Fecha y hora</th>
-          <th></th>
-        </tr>
-      </thead>
-      <tbody *ngFor="let disaster of disasters">
-        <tr class="cell-row row-hovering">
-          <td class="cell-row-update"><ion-button native color="primary" (click)="modalUpdate(disaster.id)">Editar</ion-button></td>
-          <td>{{disaster.id}}</td>
-          <td>{{disaster.type}}</td>
-          <td>
-            {{disaster.origin}}<br><br>
-            {{disaster.area}} m²
-          </td>
-          <td>
-            <strong>Heridos:</strong> {{disaster.injured}}<br>
-            <strong>Fallecidos:</strong> {{disaster.deceased}}
-          </td>
-          <td>{{disaster.time}}</td>
-          <td class="cell-row-delete"><ion-button native color="danger" (click)="modalDelete(disaster.id)">Borrar</ion-button></td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
+    <ion-grid>
+      <ion-row>
+        <ion-col></ion-col>
+        <ion-col size="12" size-md="10" size-lg="8" class="background-soft-blue">
+          <h1 class="text-dark-gray">Desastres naturales recogidos por Catastropher</h1>
+          <br>
+      
+          <div class="horizontal-scroll">
+          <table class="table-centering">
+            <thead>
+              <tr class="cell-header">
+                <th></th>
+                <th>id</th>
+                <th>Tipo</th>
+                <th>Daños</th>
+                <th>Víctimas</th>
+                <th>Fecha y hora</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody *ngFor="let disaster of disasters">
+              <tr class="cell-row row-hovering">
+                <td class="cell-row-update"><ion-button native color="primary" (click)="modalUpdate(disaster.id)">Editar</ion-button></td>
+                <td>{{disaster.id}}</td>
+                <td>{{disaster.type}}</td>
+                <td>
+                  {{disaster.origin}}<br><br>
+                  {{disaster.area}} m²
+                </td>
+                <td>
+                  <strong>Heridos:</strong> {{disaster.injured}}<br>
+                  <strong>Fallecidos:</strong> {{disaster.deceased}}
+                </td>
+                <td>{{disaster.time}}</td>
+                <td class="cell-row-delete"><ion-button native color="danger" (click)="modalDelete(disaster.id)">Borrar</ion-button></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <br><br>
+        </ion-col>
+        <ion-col></ion-col>
+      </ion-row>
+    </ion-grid>
 
     <br><br><br><br><br>
   </div>

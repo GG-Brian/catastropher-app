@@ -11,37 +11,47 @@
     </div>
     <br><br>
 
-    <h1 class="text-dark-gray">Miembros recogidos por Catastropher</h1>
-    <br>
+    <ion-grid>
+      <ion-row>
+        <ion-col></ion-col>
+        <ion-col size="12" size-md="10" size-lg="8" class="background-soft-blue">
+          <h1 class="text-dark-gray">Miembros recogidos por Catastropher</h1>
+          <br>
+      
+          <div class="horizontal-scroll">
+          <table class="table-centering">
+            <thead>
+              <tr class="cell-header">
+                <th></th>
+                <th>dni</th>
+                <th>Nombre</th>
+                <th>Edad</th>
+                <th>Inscripción</th>
+                <th>Grupo</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody *ngFor="let member of members">
+              <tr class="cell-row row-hovering">
+                <td class="cell-row-update"><ion-button native color="primary" (click)="modalUpdate(member.dni)">Editar</ion-button></td>
+                <td>{{member.dni}}</td>
+                <td>{{member.name}}</td>
+                <td>{{member.age}}</td>
+                <td>{{member.date}}</td>
+                  <div *ngIf="!member.thegroup; then isnull; else notnull"></div>
+                  <ng-template #isnull><td></td></ng-template>
+                  <ng-template #notnull><td>{{member.thegroup.id}}</td></ng-template>
+                <td class="cell-row-delete"><ion-button native color="danger" (click)="modalDelete(member.dni)">Borrar</ion-button></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <br><br>
+        </ion-col>
+        <ion-col></ion-col>
+      </ion-row>
+    </ion-grid>
 
-    <div class="horizontal-scroll">
-    <table class="table-centering">
-      <thead>
-        <tr class="cell-header">
-          <th></th>
-          <th>dni</th>
-          <th>Nombre</th>
-          <th>Edad</th>
-          <th>Inscripción</th>
-          <th>Grupo</th>
-          <th></th>
-        </tr>
-      </thead>
-      <tbody *ngFor="let member of members">
-        <tr class="cell-row row-hovering">
-          <td class="cell-row-update"><ion-button native color="primary" (click)="modalUpdate(member.dni)">Editar</ion-button></td>
-          <td>{{member.dni}}</td>
-          <td>{{member.name}}</td>
-          <td>{{member.age}}</td>
-          <td>{{member.date}}</td>
-            <div *ngIf="!member.thegroup; then isnull; else notnull"></div>
-            <ng-template #isnull><td></td></ng-template>
-            <ng-template #notnull><td>{{member.thegroup.id}}</td></ng-template>
-          <td class="cell-row-delete"><ion-button native color="danger" (click)="modalDelete(member.dni)">Borrar</ion-button></td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
 
   <br><br><br><br><br>
   </div>

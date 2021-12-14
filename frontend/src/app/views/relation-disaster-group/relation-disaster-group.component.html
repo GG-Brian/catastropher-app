@@ -3,7 +3,7 @@
 </ion-header>
 
 <ion-content>
-  <br><br><br><br>
+  <br><br><br>
   <div class="ion-text-center">
     <div>
       <ion-button native color="light" size="large" (click)="modalCreate()">Agregar nuevo vínculo</ion-button>
@@ -12,7 +12,7 @@
     <ion-grid>
       <ion-row>
         <ion-col></ion-col>
-        <ion-col size="11" size-md="8" size-lg="6" id="background-soft-blue">
+        <ion-col size="12" size-md="8" size-lg="6" id="background-soft-blue">
           <!-- Tab links -->
             <ion-grid>
               <ion-row id="background-bluish">
@@ -26,6 +26,8 @@
 
           <!-- Tab content -->
           <div id="disastersFirst" class="tabcontent">
+            <br>
+            <h2>Vínculos desastre-grupo ordenado por desastres</h2>
             <br>
             <div class="horizontal-scroll">
               <table class="table-centering">
@@ -52,6 +54,8 @@
 
           <div id="groupsFirst" class="tabcontent">
             <br>
+            <h2>Vínculos desastre-grupo ordenado por grupos</h2>
+            <br>
             <div class="horizontal-scroll">
               <table class="table-centering">
                 <thead>
@@ -65,8 +69,8 @@
                 <tbody *ngFor="let relation of relationsGroup">
                   <tr class="cell-row row-hovering">
                     <td class="cell-row-update"><ion-button native size="small" color="primary" (click)="modalUpdate(relation.relation.disasterId, relation.relation.hgroupId)">Editar</ion-button></td>
-                    <td>{{relation.relation.disasterId}}</td>
                     <td>{{relation.relation.hgroupId}}</td>
+                    <td>{{relation.relation.disasterId}}</td>
                     <td class="cell-row-delete"><ion-button native size="small" color="danger" (click)="modalDelete(relation.relation.disasterId, relation.relation.hgroupId)">Borrar</ion-button></td>
                   </tr>
                 </tbody>
