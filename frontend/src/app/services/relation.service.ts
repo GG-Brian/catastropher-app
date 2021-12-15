@@ -32,7 +32,7 @@ export class RelationService {
   createRelation(newRelation: Relation): Observable<Relation>{
     let bodyEncoded = new URLSearchParams();
     bodyEncoded.append("disasterId", newRelation.disasterId.toString());
-    bodyEncoded.append("groupdId", newRelation.groupId.toString());
+    bodyEncoded.append("groupId", newRelation.groupId.toString());
     const body = bodyEncoded.toString();
 
     console.log("creation of a new Relation");

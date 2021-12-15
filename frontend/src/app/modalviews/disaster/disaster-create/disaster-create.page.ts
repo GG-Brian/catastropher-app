@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ModalController } from '@ionic/angular';
+import { UserpermissionsService } from 'src/app/providers/userpermissions.service';
 import { Disaster } from 'src/app/models/disaster';
 import { DisasterService } from 'src/app/services/disaster.service';
 import { DisasterCreateConfirmPage } from '../disaster-create-confirm/disaster-create-confirm.page';
@@ -9,14 +10,12 @@ import { DisasterCreateConfirmPage } from '../disaster-create-confirm/disaster-c
   templateUrl: './disaster-create.page.html',
   styleUrls: ['./disaster-create.page.scss'],
 })
-export class DisasterCreatePage implements OnInit {
+export class DisasterCreatePage {
   
   myDisaster: Disaster;
   public modelData: any;
 
-  constructor(private disasterService: DisasterService, private modalController: ModalController) { }
-
-  ngOnInit() { }
+  constructor(private disasterService: DisasterService, private modalController: ModalController, private userpermissionsService: UserpermissionsService) { }
 
   recordCreate(newType: string, newOrigin: string, newArea: number, newInjured: number, newDeceased: number, newTime: string){
     newTime = newTime.substring(0, newTime.length - 6) + 'Z';

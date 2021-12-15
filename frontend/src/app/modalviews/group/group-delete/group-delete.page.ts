@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ModalController } from '@ionic/angular';
+import { UserpermissionsService } from 'src/app/providers/userpermissions.service';
 import { Helpgroup } from 'src/app/models/helpgroup';
 import { HelpgroupService } from 'src/app/services/helpgroup.service';
 import { GroupDeleteConfirmPage } from '../group-delete-confirm/group-delete-confirm.page';
@@ -15,7 +16,7 @@ export class GroupDeletePage implements OnInit {
   myGroup: Helpgroup;
   public modelData: any;
 
-  constructor(private groupService: HelpgroupService, private modalController: ModalController) { }
+  constructor(private groupService: HelpgroupService, private modalController: ModalController, private userpermissionsService: UserpermissionsService) { }
 
   ngOnInit() {
     this.groupId =+ localStorage.getItem("groupId");

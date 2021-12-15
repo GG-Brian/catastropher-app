@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ModalController } from '@ionic/angular';
+import { UserpermissionsService } from 'src/app/providers/userpermissions.service';
 import { SupporterCreatePage } from 'src/app/modalviews/supporter/supporter-create/supporter-create.page';
 import { SupporterDeletePage } from 'src/app/modalviews/supporter/supporter-delete/supporter-delete.page';
 import { SupporterUpdatePage } from 'src/app/modalviews/supporter/supporter-update/supporter-update.page';
@@ -19,15 +20,12 @@ export class SupporterComponent implements OnInit {
   public modelData: any;
   private memberDni: string;
 
-  constructor(private supporterService: SupporterService, private helpgroupService: HelpgroupService, private modalController: ModalController) { }
+  constructor(private supporterService: SupporterService, private helpgroupService: HelpgroupService, private modalController: ModalController, private userpermissionsService: UserpermissionsService) { }
   
   ngOnInit(): void { this.dataLoader(); }
   
   dataLoader() {
     this.supporterService.getSupporters().subscribe((allSupporters: Array<Supporter>) => {
-      // allSupporters.forEach((thisSupporter) => {
-      //   this.helpgroupService.getGroupById( thisSupporter .thegroup.)
-      // });
       this.members = allSupporters;
       console.log(allSupporters);
     })

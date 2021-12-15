@@ -6,7 +6,7 @@ import { ModalController } from '@ionic/angular';
   templateUrl: './relation-create-confirm.page.html',
   styleUrls: ['./relation-create-confirm.page.scss'],
 })
-export class RelationCreateConfirmPage implements OnInit {
+export class RelationCreateConfirmPage {
 
   constructor(private modalController: ModalController) { }
   ngOnInit() {}

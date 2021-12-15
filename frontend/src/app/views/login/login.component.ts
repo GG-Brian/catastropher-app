@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { UserpermissionsService } from 'src/app/providers/userpermissions.service';
 
 @Component({
   selector: 'app-login',
@@ -7,8 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginComponent implements OnInit {
 
-  constructor() { }
+  constructor(private userPermissionsService: UserpermissionsService) { }
 
   ngOnInit() {}
+
+  login(name: string, password: string){
+    console.log(name + " y " + password);
+  }
 
 }

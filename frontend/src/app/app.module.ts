@@ -21,7 +21,10 @@ import { MeetUsComponent } from './views/meet-us/meet-us.component';
 // Used into meet-us view for document carousel injection
 import { JavascriptLoaderService } from "./services/javascript-loader.service"
 import { SharedModuleModule } from './shared-components/shared-module';
+import { FormsModule } from '@angular/forms';
 
+// Acts as a provider by the way it's defined (active 'behind the scenes')
+import { UserpermissionsService } from './providers/userpermissions.service'
 
 @NgModule({
   declarations: [
@@ -34,8 +37,8 @@ import { SharedModuleModule } from './shared-components/shared-module';
     MeetUsComponent
   ],
   entryComponents: [],
-  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, SharedModuleModule, HttpClientModule],
-  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }, JavascriptLoaderService],
+  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, SharedModuleModule, HttpClientModule, FormsModule],
+  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }, JavascriptLoaderService, UserpermissionsService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

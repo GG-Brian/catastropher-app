@@ -6,10 +6,9 @@ import { ModalController } from '@ionic/angular';
   templateUrl: './disaster-create-confirm.page.html',
   styleUrls: ['./disaster-create-confirm.page.scss'],
 })
-export class DisasterCreateConfirmPage implements OnInit {
+export class DisasterCreateConfirmPage {
   
   constructor(private modalController: ModalController) { }
-  ngOnInit() {}
 
   closeModel() {
     const close: string = "Modal Removed";

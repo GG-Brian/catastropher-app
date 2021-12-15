@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ModalController } from '@ionic/angular';
+import { UserpermissionsService } from 'src/app/providers/userpermissions.service';
 import { Supporter } from 'src/app/models/supporter';
 import { SupporterService } from 'src/app/services/supporter.service';
 import { SupporterUpdateConfirmPage } from '../supporter-update-confirm/supporter-update-confirm.page';
@@ -15,7 +16,7 @@ export class SupporterUpdatePage implements OnInit {
   myMember: Supporter;
   public modelData: any;
 
-  constructor(private supporterService: SupporterService, private modalController: ModalController) { }
+  constructor(private supporterService: SupporterService, private modalController: ModalController, private userpermissionsService: UserpermissionsService) { }
 
   ngOnInit() {
     this.memberDni = localStorage.getItem("memberDni");

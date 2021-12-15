@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ModalController } from '@ionic/angular';
+import { UserpermissionsService } from 'src/app/providers/userpermissions.service';
 import { Relation } from 'src/app/models/relation';
 import { RelationService } from 'src/app/services/relation.service';
 import { RelationCreateConfirmPage } from '../relation-create-confirm/relation-create-confirm.page';
@@ -9,14 +10,12 @@ import { RelationCreateConfirmPage } from '../relation-create-confirm/relation-c
   templateUrl: './relation-create.page.html',
   styleUrls: ['./relation-create.page.scss'],
 })
-export class RelationCreatePage implements OnInit {
+export class RelationCreatePage {
   
   myRelation: Relation;
   public modelData: any;
 
-  constructor(private relationService: RelationService, private modalController: ModalController) { }
-
-  ngOnInit() { }
+  constructor(private relationService: RelationService, private modalController: ModalController, private userpermissionsService: UserpermissionsService) { }
 
   recordCreate(disasterId: number, groupId: number){
     const newRelation: Relation = {

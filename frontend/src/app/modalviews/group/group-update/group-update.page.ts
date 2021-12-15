@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ModalController } from '@ionic/angular';
+import { UserpermissionsService } from 'src/app/providers/userpermissions.service';
 import { Helpgroup } from 'src/app/models/helpgroup';
 import { HelpgroupService } from 'src/app/services/helpgroup.service';
-import { GroupCreateConfirmPage } from '../group-create-confirm/group-create-confirm.page';
 import { GroupUpdateConfirmPage } from '../group-update-confirm/group-update-confirm.page';
 
 @Component({
@@ -16,7 +16,7 @@ export class GroupUpdatePage implements OnInit {
   myGroup: Helpgroup;
   public modelData: any;
 
-  constructor(private groupService: HelpgroupService, private modalController: ModalController) { }
+  constructor(private groupService: HelpgroupService, private modalController: ModalController, private userpermissionsService: UserpermissionsService) { }
 
   ngOnInit() {
     this.groupId =+ localStorage.getItem("groupId");

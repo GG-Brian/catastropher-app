@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ModalController } from '@ionic/angular';
+import { UserpermissionsService } from 'src/app/providers/userpermissions.service';
 import { GroupCreatePage } from 'src/app/modalviews/group/group-create/group-create.page';
 import { GroupDeletePage } from 'src/app/modalviews/group/group-delete/group-delete.page';
 import { GroupUpdatePage } from 'src/app/modalviews/group/group-update/group-update.page';
@@ -18,7 +19,7 @@ export class HelpgroupComponent implements OnInit {
   public modelData: any;
   private groupId: number;
 
-  constructor(private groupService: HelpgroupService, private modalController: ModalController) { }
+  constructor(private groupService: HelpgroupService, private modalController: ModalController, private userpermissionsService: UserpermissionsService) { }
   
   ngOnInit(): void { this.dataLoader(); }
   

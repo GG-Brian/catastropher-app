@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ModalController } from '@ionic/angular';
+import { UserpermissionsService } from 'src/app/providers/userpermissions.service';
 import { Helpgroup } from 'src/app/models/helpgroup';
 import { HelpgroupService } from 'src/app/services/helpgroup.service';
 import { GroupCreateConfirmPage } from '../group-create-confirm/group-create-confirm.page';
@@ -9,14 +10,12 @@ import { GroupCreateConfirmPage } from '../group-create-confirm/group-create-con
   templateUrl: './group-create.page.html',
   styleUrls: ['./group-create.page.scss'],
 })
-export class GroupCreatePage implements OnInit {
+export class GroupCreatePage {
 
   myGroup: Helpgroup;
   public modelData: any;
 
-  constructor(private disasterService: HelpgroupService, private modalController: ModalController) { }
-
-  ngOnInit() { }
+  constructor(private disasterService: HelpgroupService, private modalController: ModalController, private userpermissionsService: UserpermissionsService) { }
 
   recordCreate(newTask: string, newPlace: string, newCreation: string, ){
     newCreation = newCreation.substring(0, newCreation.length - 19);

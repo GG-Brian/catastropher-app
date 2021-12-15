@@ -1,15 +1,18 @@
 import { Component, OnInit } from '@angular/core';
+import { ModalController } from '@ionic/angular';
 
 @Component({
   selector: 'app-relation-update-confirm',
   templateUrl: './relation-update-confirm.page.html',
   styleUrls: ['./relation-update-confirm.page.scss'],
 })
-export class RelationUpdateConfirmPage implements OnInit {
+export class RelationUpdateConfirmPage {
 
-  constructor() { }
+  constructor(private modalController: ModalController) { }
 
-  ngOnInit() {
+  closeModel() {
+    const close: string = "Modal Removed";
+    this.modalController.dismiss(close);
   }
 
 }

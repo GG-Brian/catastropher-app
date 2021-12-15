@@ -3,5 +3,75 @@
 </ion-header>
 
 <ion-content>
-  
+  <div id="container">
+    <br><br>
+    <ion-grid>
+      <ion-row>
+        <ion-col></ion-col>
+        <ion-col class="text-dark-gray ion-text-justify" size="11.65" size-sm="10" size-lg="9">
+          <h3>Nuesta aplicación no requiere de registro para acceder al analisis de datos de desastres naturales y grupos, pero
+            sí para operar sobre estos</h3>
+          <br>
+          <br>
+
+          <ion-grid>
+            <ion-row>
+              <ion-col></ion-col>
+              <ion-col size="12" size-sm="10" size-md="9" size-lg="7" size-xl="5" class="centered">
+                <ion-card class="background-grayish ion-text-center">
+                  <ion-card-header>
+                    <ion-card-title>
+                      <ion-text color="medium">Actualmente registrado como: variable</ion-text>
+                    </ion-card-title>
+                  </ion-card-header>
+                  <ion-card-content>
+                    <br>
+                    <table class="table-centering">
+                      <thead>
+                        <tr class="cell-header">
+                          <th><ion-text color="light">Nombre de usuario</ion-text></th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr class="cell-row">
+                          <td>
+                            <ion-item>
+                              <ion-input type="text" required [(ngModel)]="name"></ion-input>
+                            </ion-item>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                    <br>
+                    <table class="table-centering">
+                      <thead>
+                        <tr class="cell-header">
+                          <th><ion-text color="light">Contraseña</ion-text></th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr class="cell-row">
+                          <td>
+                            <ion-item>
+                              <ion-input type="text" required [(ngModel)]="password"></ion-input>
+                            </ion-item>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                    <br>
+                    <ion-button native color="light" (click)="login(name, password)">Acceder</ion-button>
+                    <br>
+                  </ion-card-content>
+                </ion-card>
+              </ion-col>
+              <ion-col></ion-col>
+            </ion-row>
+          </ion-grid>
+
+        </ion-col>
+        <ion-col></ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
 </ion-content>

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ModalController } from '@ionic/angular';
+import { UserpermissionsService } from 'src/app/providers/userpermissions.service';
 import { Supporter } from 'src/app/models/supporter';
 import { SupporterService } from 'src/app/services/supporter.service';
 import { SupporterCreateConfirmPage } from '../supporter-create-confirm/supporter-create-confirm.page';
@@ -9,14 +10,12 @@ import { SupporterCreateConfirmPage } from '../supporter-create-confirm/supporte
   templateUrl: './supporter-create.page.html',
   styleUrls: ['./supporter-create.page.scss'],
 })
-export class SupporterCreatePage implements OnInit {
+export class SupporterCreatePage {
 
   myMember: Supporter;
   public modelData: any;
 
-  constructor(private supporterService: SupporterService, private modalController: ModalController) { }
-
-  ngOnInit() { }
+  constructor(private supporterService: SupporterService, private modalController: ModalController, private userpermissionsService: UserpermissionsService) { }
 
   recordCreate(newDni: string, newName: string, newAge: number, newDate: string, newThegroup: number ){
     newDate = newDate.substring(0, newDate.length - 19);

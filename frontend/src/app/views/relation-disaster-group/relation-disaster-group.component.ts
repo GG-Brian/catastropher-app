@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ModalController } from '@ionic/angular';
+import { UserpermissionsService } from 'src/app/providers/userpermissions.service';
 import { RelationCreatePage } from 'src/app/modalviews/relation/relation-create/relation-create.page';
 import { RelationDeletePage } from 'src/app/modalviews/relation/relation-delete/relation-delete.page';
 import { RelationUpdatePage } from 'src/app/modalviews/relation/relation-update/relation-update.page';
@@ -22,7 +23,7 @@ export class RelationDisasterGroupComponent implements OnInit {
   private disasterId: number;
   private groupId: number;
 
-  constructor(private javascriptFile: JavascriptLoaderService, private relationService: RelationService, private modalController: ModalController) { 
+  constructor(private javascriptFile: JavascriptLoaderService, private relationService: RelationService, private modalController: ModalController, private userpermissionsService: UserpermissionsService) { 
       this.javascriptFile.LoadMeetUsFiles(["relation-tabs"])
   }
   

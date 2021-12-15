@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ModalController } from '@ionic/angular';
+import { UserpermissionsService } from 'src/app/providers/userpermissions.service';
 import { Disaster } from 'src/app/models/disaster';
 import { DisasterService } from 'src/app/services/disaster.service';
 import { DisasterDeleteConfirmPage } from '../disaster-delete-confirm/disaster-delete-confirm.page';
@@ -15,7 +16,7 @@ export class DisasterDeletePage implements OnInit {
   myDisaster: Disaster;
   public modelData: any;
 
-  constructor(private disasterService: DisasterService, private modalController: ModalController) { }
+  constructor(private disasterService: DisasterService, private modalController: ModalController, private userpermissionsService: UserpermissionsService) { }
 
   ngOnInit() {
     this.disasterId =+ localStorage.getItem("disasterId");

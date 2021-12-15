@@ -6,12 +6,10 @@ import { JavascriptLoaderService } from 'src/app/services/javascript-loader.serv
   templateUrl: './meet-us.component.html',
   styleUrls: ['./meet-us.component.scss'],
 })
-export class MeetUsComponent implements OnInit {
+export class MeetUsComponent {
 
   constructor( private javascriptFile: JavascriptLoaderService) {
     this.javascriptFile.LoadMeetUsFiles(["meet-us-carousel"])
   }
-
-  ngOnInit(): void {}
 
 }

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ModalController } from '@ionic/angular';
+import { UserpermissionsService } from 'src/app/providers/userpermissions.service';
 import { Relation } from 'src/app/models/relation';
 import { RelationService } from 'src/app/services/relation.service';
 import { RelationUpdateConfirmPage } from '../relation-update-confirm/relation-update-confirm.page';
@@ -16,7 +17,7 @@ export class RelationUpdatePage implements OnInit {
   myRelation: Relation;
   public modelData: any;
 
-  constructor(private relationService: RelationService, private modalController: ModalController) { }
+  constructor(private relationService: RelationService, private modalController: ModalController, private userpermissionsService: UserpermissionsService) { }
 
   ngOnInit() {
     this.disasterId = + localStorage.getItem("disasterId");

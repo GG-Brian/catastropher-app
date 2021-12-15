@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ModalController } from '@ionic/angular';
+import { UserpermissionsService } from 'src/app/providers/userpermissions.service';
 import { DisasterCreatePage } from 'src/app/modalviews/disaster/disaster-create/disaster-create.page';
 import { DisasterDeletePage } from 'src/app/modalviews/disaster/disaster-delete/disaster-delete.page';
 import { DisasterUpdatePage } from 'src/app/modalviews/disaster/disaster-update/disaster-update.page';
@@ -18,7 +19,7 @@ export class DisasterComponent implements OnInit {
   public modelData: any;
   private disasterId: number;
 
-  constructor(private disasterService: DisasterService, private modalController: ModalController) { }
+  constructor(private disasterService: DisasterService, private modalController: ModalController, private userpermissionsService: UserpermissionsService) { }
   
   ngOnInit(): void { this.dataLoader(); }
   
