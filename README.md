@@ -11,15 +11,14 @@
 
 
 ## README's Content Table
-1. [Usage requirements](#Usage-requirements)
-2. [Diagrams of use cases & models](#Diagrams-of-use-cases-and-Models)
-3. [Interfaces (project's visual design prototype)](#Prototype-for-intended-visual-interfaces)
-4. [Usability aspects; Interfaces subject grades](#Usability-aspects-for-Interfaces-subject-grades)
-5. [Brief project usage manual instructions (non-develpment users)](#Brief-project-usage-instructions---user-manual)
-6. [Complete installation manual (development users)](#Complete-installation-of-IDEs-and-packages---development-user-manual)
-7. [Other aspects; Planning, technologies, repositories, conclusion & opinion and references](#Planning---technologies---repositories---conclusions---opinion-and-references)
-
-
+1. [Usage requirements](#Usage-requirements) 
+2. [User requirements - Usability](#User-requirements)
+3. [Diagrams of use cases & models](#Diagrams-of-use-cases-and-Models)
+4. [Interfaces (project's visual design prototype)](#Prototype-for-intended-visual-interfaces)
+5. [Usability aspects; Interfaces subject grades](#Usability-aspects-for-Interfaces-subject-grades)
+6. [Brief project usage manual instructions (non-develpment users)](#Brief-project-usage-instructions---user-manual)
+7. [Complete installation manual (development users)](#Complete-installation-of-IDEs-and-packages---development-user-manual)
+8. [Other aspects; Planning, technologies, repositories, conclusion & opinion and references](#Planning---technologies---repositories---conclusions---opinion-and-references)
 
 
 ## Usage requirements
@@ -39,6 +38,70 @@ There is certain software to be used in order to use this project. The following
 * XAMPP Control Panel 7.4.12 (exclusively for mysql local port listening, needed for correct local database connection, though any other mysql localhost server connection service could be used)
  
 * Postman version 9.1.3 (For individual testing of database functionality from either side (backend or frontend))
+
+
+
+
+## User requirements
+
+There are few aspects relating to ease of use of this app that helps the current user know what is happening or will happen upon available actions. Some of these aspects are the following:
+
+### Upon interacting with the app for the first time, the first page explains everything important about the app, such as purpose of existence, and show empathy about the world's health for visitors
+
+![informative-home-page](/others_database-structure/user-requirements-usability/informative-home-page.PNG)
+
+
+### Might be hard to see at first, but there's intentionally two navigation toolbars, first once is everything related to the app itself and the second one is about the supposed creators of the app (information page & login page). There's a footer whenever the app's pages aren't active, which leads to the ITC enterprise's official pages.
+
+Everything I mentioned here can be seen on the previous image.
+
+
+### Intuitive: Just by a glance, the user is capable of knowing what the visual objects are supposed to do, no explanation required:
+
+![glance-disaster](/others_database-structure/user-requirements-usability/glance-disaster.PNG)
+
+
+### Upon taking action into the database objects (create a new disaster, edit or delete a record), a confirmation window appears on top for you to make the changes and confirm them, so the user *does not accidentally modify the database* :
+
+![modification-confirm](/others_database-structure/user-requirements-usability/modification-confirm.PNG)
+
+
+### Not only the previous window is a thing, but there's also a second modal window that indicates the user that the actions have been applied correctly! So the user doesn't get lost by asking themselves if their action has been done:
+
+![modification-confirm-confirmed](/others_database-structure/user-requirements-usability/modification-confirm-confirmed.PNG)
+
+
+### On the app there's this page, where the user can define wether they want database list to be ordered according to (on this case) disasters OR groups. I considered the user might want to see all disasters a group has been involved into instead of having to search into a very large list of ordered disasters but unordered groups, moderatedly improving user experience here!
+
+![preferences](/others_database-structure/user-requirements-usability/preferences.PNG)
+
+
+### Most overwhelming pages such as the one below have been thoughtfully organized, so the user doesn't get headache for viewing too many letters altogether nor giant images sticking to each other. All text and images are balanced as the user scrolls down the page, slightly improving user experience here aswell:
+
+![ordered-heap-of-things](/others_database-structure/user-requirements-usability/ordered-heap-of-things.PNG)
+
+
+### At the same page, scrolling down to the end, documents can be seen explaining ITC's actions through the latest years, I decided it would be easier for the user to manage them altogether inside a 'carousel' of memorial documents, not only this allows user to visualize their cover easier (without involving extra pages or modal views) but also select a year of their interest by pressing onto the dots below! (though these could easily be thought as unclickable for the user, but since all document's cover sizes are the same, only by repeatly pressing onto the arrows should be enough to reach their desired document quickly).
+
+![dinamic-content-carousel](/others_database-structure/user-requirements-usability/dinamic-content-carousel.PNG)
+
+
+### I considered the app could be seen from phone devices so my pages have been optimized for small screens as possible, such as adding horizontal scrolling for database tables, or ordering buttons according to screen size (though here I believe a single, collapsible button would be better than forcing those buttons to appear at all cost, but still counts as improved phone users' experience, right?)
+
+![phone-size](/others_database-structure/user-requirements-usability/phone-size.PNG)
+
+
+### Added a little, fade-in & fade-out soft animation that could also improve user experience as (at least for me) they might love how the buttons perform the animation by dragging the mouse pointer over them! Might be a small detail that could not be noticed, but is still something that should count.
+
+![animation](/others_database-structure/user-requirements-usability/animation.PNG)
+
+
+### On the previous image, used icons as representation of very popular social networks, and interaction with these sends user to ITC's account at the clicked social network icon, pretty intuitive for user experience, am I right? :D
+
+![representative-icons](/others_database-structure/user-requirements-usability/representative-icons.PNG)
+
+Oh, and if there are users with doubts of what those are, hovering upon them will make appear the link to where it leads at the bottom left of the search engine (default behaviour I felt I should mention)
+
 
 
 
