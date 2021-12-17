@@ -28,9 +28,9 @@
           <td>{{myMember.name}}</td>
           <td>{{myMember.age}}</td>
           <td>{{myMember.date}}</td>
-            <div *ngIf="!myMember.thegroup; then isnull; else notnull"></div>
-            <ng-template #isnull><td></td></ng-template>
-            <ng-template #notnull><td>{{myMember.thegroup.id}}</td></ng-template>
+            <div *ngIf="myMember.thegroup; then startsWithValue; else startsNull"></div>
+            <ng-template #startsWithValue><td>{{myMember.thegroup.id}}</td></ng-template>
+            <ng-template #startsNull><td>{{groupid}}</td></ng-template>
         </tr>
       </tbody>
     </table>
@@ -68,9 +68,10 @@
             </td>
             <td>
               <ion-item>
-                <div *ngIf="!myMember.thegroup; then isnull; else notnull"></div>
-                <ng-template #isnull><ion-input type="number" required [(ngModel)]="myMember.thegroup"></ion-input></ng-template>
-                <ng-template #notnull><ion-input type="number" required [(ngModel)]="myMember.thegroup.id"></ion-input></ng-template>
+                <!-- {{myMember.thegroup ? myMember.thegroup.id : ''}}    to have in mind this simplified if exists -->
+                <div *ngIf="myMember.thegroup; then updatesWithValue; else updatesNull"></div>
+                <ng-template #updatesWithValue><ion-input type="number" required [(ngModel)]="myMember.thegroup.id"></ion-input></ng-template>
+                <ng-template #updatesNull><ion-input type="number" required [(ngModel)]="groupid"></ion-input></ng-template>
               </ion-item>
             </td>
           </tr>
@@ -83,10 +84,9 @@
 
 <ion-footer class="ion-text-center">
   <ion-row *ngIf="myMember">
-    <div *ngIf="!myMember.thegroup; then isnull; else notnull"></div>
-    <ng-template #isnull><ion-col size="6" id="container-confirm"><ion-button native color="primary" (click)="recordUpdate(myMember.dni, myMember.name, myMember.age, myMember.date, myMember.thegroup)">Confirmar</ion-button></ion-col></ng-template>
-    <ng-template #notnull><ion-col size="6" id="container-confirm"><ion-button native color="primary" (click)="recordUpdate(myMember.dni, myMember.name, myMember.age, myMember.date, myMember.thegroup.id)">Confirmar</ion-button></ion-col></ng-template>
-    
+      <div *ngIf="!myMember.thegroup; then isnull; else notnull"></div>
+      <ng-template #isnull><ion-col size="6" id="container-confirm"><ion-button native color="primary" (click)="recordUpdate(myMember.dni, myMember.name, myMember.age, myMember.date, groupid)">Confirmar</ion-button></ion-col></ng-template>
+      <ng-template #notnull><ion-col size="6" id="container-confirm"><ion-button native color="primary" (click)="recordUpdate(myMember.dni, myMember.name, myMember.age, myMember.date, myMember.thegroup.id)">Confirmar</ion-button></ion-col></ng-template>
     <ion-col size="6" id="container-cancel"><ion-button native color="danger" (click)="closeModel()">Cancelar</ion-button></ion-col>
   </ion-row>
 </ion-footer>
