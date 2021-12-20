@@ -13,14 +13,20 @@ import { Supporter } from '../models/supporter';
 export class UserpermissionsService {
 
   private baseUrl = 'http://localhost:8080';
+  private user = "";
+  private password = "";
 
   constructor(public http: HttpClient) { }
 
-  private getOptions(){
-    let user = "juan";
-    let password = "juan";
-    let base64UserAndPasswordJuan = window.btoa(user + ":" + password);
+  public setOptions(username: string, pass: string){
+    this.user = username;
+    this.password = pass
+  }
 
+  public getUserName(){ return this.user; }
+
+  private getOptions(){
+    let base64UserAndPasswordJuan = window.btoa(this.user + ":" + this.password);
     let basico = 'basic ' + base64UserAndPasswordJuan;
 
     let options = {
@@ -31,7 +37,6 @@ export class UserpermissionsService {
       }
       //, withCredentials: true
     };
-
     return options;
   }
 

@@ -8,12 +8,12 @@ import { UserpermissionsService } from 'src/app/providers/userpermissions.servic
 })
 export class LoginComponent implements OnInit {
 
+  public registeredUsername;
+
   constructor(private userPermissionsService: UserpermissionsService) { }
+  
+  ngOnInit() { this.registeredUsername = this.userPermissionsService.getUserName();}
 
-  ngOnInit() {}
-
-  login(name: string, password: string){
-    console.log(name + " y " + password);
-  }
+  login(name: string, password: string){ this.userPermissionsService.setOptions(name, password) }
 
 }

@@ -1,8 +1,11 @@
-<ion-header [translucent]="true">
+<!-- <ion-header [translucent]="true">
   <app-itc-bar></app-itc-bar>
-</ion-header>
+</ion-header> -->
 
 <ion-content>
+  <video autoplay muted loop id="myVideo">
+    <source src="/../../assets/login-view/blue-waves-video-background-1080p.mp4" type="video/mp4">
+  </video>
   <div id="container">
     <br><br>
     <ion-grid>
@@ -21,7 +24,7 @@
                 <ion-card class="background-grayish ion-text-center">
                   <ion-card-header>
                     <ion-card-title>
-                      <ion-text color="medium">Actualmente registrado como: variable</ion-text>
+                      <ion-text color="medium">Actualmente registrado como: {{registeredUsername}}</ion-text>
                     </ion-card-title>
                   </ion-card-header>
                   <ion-card-content>

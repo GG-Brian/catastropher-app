@@ -1,46 +1,93 @@
 #container {
-    text-align: center;
-  
-    position: absolute;
-    left: 0;
-    right: 0;
-    // top: 20%;
+  text-align: center;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 20%;
   }
 
-  .text-dark-gray h4 { color: rgb(88, 88, 88); }
-  .background-grayish{ background-color: rgb(242, 242, 242); }
+// ion-content {
+//   --background: none !important;
+//   background: url('../../../assets/login-view/stock-footage-dream-lights-soft-blue-background-loop.mp4');
+//   background-position: center center;
+//   background-repeat: no-repeat;
+//   background-size: cover;
+// }
+
+.text-dark-gray h4 { color: rgb(88, 88, 88); }
+.background-grayish{ background-color: rgb(242, 242, 242); }
 
 
 
 
-  .table-centering { margin: auto; }
+.table-centering { margin: auto; }
 
-  .cell-header th {
-      padding-left: 10px;
-      padding-right: 10px;
-      padding-top: 5px;
-      padding-bottom: 5px;
+.cell-header th {
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
       
-      border: 1px solid rgb(222, 222, 222);
-      background-color: rgb(50, 122, 204);
-      color: rgb(222,222,222);
-    }
+  border: 1px solid rgb(222, 222, 222);
+  background-color: rgb(50, 122, 204);
+  color: rgb(222,222,222);
+}
     
-    .cell-row td {
-      padding-left: 10px;
-      padding-right: 10px;
-      padding-top: 5px;
-      padding-bottom: 5px;
+.cell-row td {
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
     
-      border: 1px solid rgb(66, 66, 66);
-      background-color: rgb(232, 232, 232);
-    }
+  border: 1px solid rgb(66, 66, 66);
+  background-color: rgb(232, 232, 232);
+}
     
-    #container-confirm { 
-      background-color: rgb(82, 146, 214);
-      padding-top: 12px; padding-bottom: 12px;
-    }
-    #container-cancel {
-      background-color: rgb(204, 84, 84);
-      padding-top: 12px; padding-bottom: 12px;
-    }
+#container-confirm { 
+  background-color: rgb(82, 146, 214);
+  padding-top: 12px; padding-bottom: 12px;
+}
+#container-cancel {
+  background-color: rgb(204, 84, 84);
+  padding-top: 12px; padding-bottom: 12px;
+}
+
+
+
+
+
+
+/* Style the video: 100% width and height to cover the entire window */
+#myVideo {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+}
+
+/* Add some content at the bottom of the video/page */
+.content {
+  position: fixed;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  color: #f1f1f1;
+  width: 100%;
+  padding: 20px;
+}
+
+/* Style the button used to pause/play the video */
+#myBtn {
+  width: 200px;
+  font-size: 18px;
+  padding: 10px;
+  border: none;
+  background: #000;
+  color: #fff;
+  cursor: pointer;
+}
+
+#myBtn:hover {
+  background: #ddd;
+  color: black;
+}
