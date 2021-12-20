@@ -1,7 +1,3 @@
-<!-- <ion-header [translucent]="true">
-  <app-itc-bar></app-itc-bar>
-</ion-header> -->
-
 <ion-content>
   <video autoplay muted loop id="myVideo">
     <source src="/../../assets/login-view/blue-waves-video-background-1080p.mp4" type="video/mp4">
@@ -12,19 +8,28 @@
       <ion-row>
         <ion-col></ion-col>
         <ion-col class="text-dark-gray ion-text-justify" size="11.65" size-sm="10" size-lg="9">
-          <h3>Nuesta aplicación no requiere de registro para acceder al analisis de datos de desastres naturales y grupos, pero
-            sí para operar sobre estos</h3>
-          <br>
-          <br>
 
+          <div class="background-bluish">
+            <ion-grid>
+              <ion-row>
+                <ion-col>
+                  <h3>Nuesta aplicación no requiere de registro para acceder al analisis de datos de desastres naturales y grupos, pero
+                    sí para operar sobre estos</h3>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+          </div>
+
+          <br><br>
           <ion-grid>
             <ion-row>
               <ion-col></ion-col>
               <ion-col size="12" size-sm="10" size-md="9" size-lg="7" size-xl="5" class="centered">
-                <ion-card class="background-grayish ion-text-center">
+                <ion-card class="background-bluish-dark ion-text-center">
+                  <br>
                   <ion-card-header>
                     <ion-card-title>
-                      <ion-text color="medium">Actualmente registrado como: {{registeredUsername}}</ion-text>
+                      <ion-text>Actualmente registrado como: {{registeredUsername}}</ion-text>
                     </ion-card-title>
                   </ion-card-header>
                   <ion-card-content>
@@ -64,7 +69,7 @@
                     </table>
                     <br>
                     <ion-button native color="light" (click)="login(name, password)">Acceder</ion-button>
-                    <br>
+                    <br><br>
                   </ion-card-content>
                 </ion-card>
               </ion-col>
